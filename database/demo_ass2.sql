@@ -306,7 +306,7 @@ INSERT INTO kien_hang VALUE (8,10,"Xuan Loc Dong Nai","Nha Trang Khanh Hoa","Sac
 INSERT INTO kien_hang VALUE (9,10,"Xuan Loc Dong Nai","Nha Trang Khanh Hoa","Sach",5,104);
 
 
-/*--------------------Lamtiep------------------------*/
+
 INSERT INTO kien_hang VALUE (10,10,"Xuan Loc, Dong Nai","Q2, TP HCM","Vat Lieu",5,105);
 INSERT INTO kien_hang VALUE (11,10,"Nha Trang, Khanh Hoa","Xuan Loc, Dong Nai","Do choi",5,106);
 INSERT INTO kien_hang VALUE (12,10,"Nha Trang, Khanh Hoa","Xuan Loc, Dong Nai","Do choi",5,106);
