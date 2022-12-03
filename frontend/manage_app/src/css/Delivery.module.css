@@ -18,3 +18,6 @@ tbody td{
     color: rgb(6, 95, 6);
     font-weight: 500;
 }
+tbody td:last-child{
+    border: none;
+}
