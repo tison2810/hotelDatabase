@@ -25,8 +25,7 @@ div .sales .logo{
 div .sales .middle{
     display: flex;
     align-items: center;
-    justify-content: center;
-    
+    justify-content: space-between;
 }
 .insights h3{
     margin: 1rem 0 0.6rem;
@@ -37,4 +36,8 @@ div .sales .middle{
     width: 92px;
     height: 92px;
     border-radius: 50% ;
+}
+.progress svg{
+    width: 7rem;
+    height: 7rem;
 }

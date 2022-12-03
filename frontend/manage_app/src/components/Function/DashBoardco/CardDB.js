@@ -17,10 +17,11 @@ const CardDB = () => {
                             <svg>
                                 <circle cx='38' cy='38' r='36'></circle>
                             </svg>
-                        </div> 
+                       
                         <div className={styles.number}>
                             <p>81%</p>
-                        </div>    
+                         </div>    
+                     </div> 
                 </div>
                <small>Last 24 Hours</small>
                        
