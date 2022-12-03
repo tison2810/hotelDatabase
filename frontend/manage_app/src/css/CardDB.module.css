@@ -23,6 +23,18 @@ div .sales .logo{
     font-size: 1rem;
 }   
 div .sales .middle{
+    display: flex;
+    align-items: center;
+    justify-content: center;
     
-    
+}
+.insights h3{
+    margin: 1rem 0 0.6rem;
+    font-size: 1rem;
+}
+.insights .progress{
+    position: relative;
+    width: 92px;
+    height: 92px;
+    border-radius: 50% ;
 }
