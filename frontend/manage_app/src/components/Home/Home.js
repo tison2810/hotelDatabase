@@ -7,9 +7,7 @@ const Home = () => {
     return (
         <>
             <Aside/>
-            <section>
-
-            </section>
+            
         </>    
     )
 }

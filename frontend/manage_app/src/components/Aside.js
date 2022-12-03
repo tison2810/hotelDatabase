@@ -7,7 +7,8 @@ import { CiDeliveryTruck } from "react-icons/ci"
 import { FiUsers } from "react-icons/fi"
 import { FaWarehouse } from "react-icons/fa"
 import { GrFormAdd } from "react-icons/gr"
-import {CiLogout} from "react-icons/ci"
+import { CiLogout } from "react-icons/ci"
+import DashBoard from "./Function/DashBoard";
 
 const Aside = () => {
     return (
@@ -74,7 +75,7 @@ const Aside = () => {
                 </div>
                 
             </aside>
-
+            <DashBoard/>
         </div>
     )
 }
