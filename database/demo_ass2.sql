@@ -320,6 +320,30 @@ INSERT INTO kien_hang VALUE (22,12,"Xuan Loc Dong Nai","Q2, TP HCM","Dung cu",5,
 INSERT INTO kien_hang VALUE (23,11,"Q1, TP HCM","Xuan Loc, Dong Nai","Do choi",5,110);
 INSERT INTO kien_hang VALUE (24,13,"Q1, TP HCM","Xuan Loc, Dong Nai","Do choi",5,110);
 
+INSERT INTO nhan_hang VALUE (1,100);
+INSERT INTO nhan_hang VALUE (2,100);
+INSERT INTO nhan_hang VALUE (3,101);
+INSERT INTO nhan_hang VALUE (4,102);
+INSERT INTO nhan_hang VALUE (5,102);
+INSERT INTO nhan_hang VALUE (6,103);
+INSERT INTO nhan_hang VALUE (7,103);
+INSERT INTO nhan_hang VALUE (8,104);
+INSERT INTO nhan_hang VALUE (9,105);
+INSERT INTO nhan_hang VALUE (10,105);
+INSERT INTO nhan_hang VALUE (11,106);
+INSERT INTO nhan_hang VALUE (12,106);
+INSERT INTO nhan_hang VALUE (13,106);
+INSERT INTO nhan_hang VALUE (14,107);
+INSERT INTO nhan_hang VALUE (15,107);
+INSERT INTO nhan_hang VALUE (16,107);
+INSERT INTO nhan_hang VALUE (17,107);
+INSERT INTO nhan_hang VALUE (18,107);
+INSERT INTO nhan_hang VALUE (19,107);
+INSERT INTO nhan_hang VALUE (20,108);
+INSERT INTO nhan_hang VALUE (21,108);
+INSERT INTO nhan_hang VALUE (22,108);
+INSERT INTO nhan_hang VALUE (23,108);
+INSERT INTO nhan_hang VALUE (24,108);
 
 /* -------------------------------------------------------------------------*/
 INSERT INTO nhan_vien VALUE (1,111111111,"Akali A Bliztcrank",1234567890);
@@ -470,7 +494,14 @@ INSERT chuyen_xe_lien_tinh VALUE (18,3,54,17,14,3,35);
 INSERT chuyen_xe_lien_tinh VALUE (19,6,40,15,12,4,37);
 INSERT chuyen_xe_lien_tinh VALUE (20,5,45,16,13,5,39);
 
--- INSERT Ma_so VALUE (1,1,"",
+INSERT Yeu_cau VALUE (1,1,"",3,1,100);
+INSERT Yeu_cau VALUE (1,2,"",3,2,102);
+INSERT Yeu_cau VALUE (3,3,"",4,3,103);
+INSERT Yeu_cau VALUE (1,4,"",3,4,104);
+INSERT Yeu_cau VALUE (6,3,"",4,5,106);
+INSERT Yeu_cau VALUE (6,3,"",4,6,107);
+
+
 -- Ma_KH INT NOT NULL,
 --     Ma_so INT unique,
 --     Trang_thai VARCHAR(45),
