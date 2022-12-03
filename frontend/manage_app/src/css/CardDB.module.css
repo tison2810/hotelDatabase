@@ -10,11 +10,12 @@ div .sales{
     transition: all 200ms ease;
 }
 div .sales .logo{
-    background-color: coral;
+    background-color: rgb(59, 226, 53);
     display: flex;
     justify-content: center;
     padding: 0.5rem; 
     margin-top: 0.5rem;
+    margin-bottom:0.5rem;
     border-radius: 50%;
     width: fit-content;
     height: fit-content;
@@ -22,5 +23,6 @@ div .sales .logo{
     font-size: 1rem;
 }   
 div .sales .middle{
-    margin-top: 10px;
+    
+    
 }
