@@ -16,6 +16,6 @@ main .date input[type='date']{
 }
 .insights {
     display: grid;
-    grid-template-columns: repeat(3,1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: 1.6rem;
 }
