@@ -11,7 +11,9 @@ const DashBoard = () => {
                 <input type="date"/>
             </div>
             <div className={styles.insights}>
-                <CardDB/>
+                <CardDB />
+                <CardDB />
+                <CardDB />
             </div>
         </main>
     )
