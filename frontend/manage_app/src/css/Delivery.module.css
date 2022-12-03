@@ -18,6 +18,12 @@ tbody td{
     color: rgb(6, 95, 6);
     font-weight: 500;
 }
-tbody td:last-child{
+.recent_deli table tbody .last_child tr td{
     border: none;
+}
+.recent_deli a{
+    text-align: center;
+    display: block;
+    margin: 1rem auto;
+    color: rgb(52, 226, 8);
 }

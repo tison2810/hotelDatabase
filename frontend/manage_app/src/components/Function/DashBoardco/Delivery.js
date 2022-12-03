@@ -51,7 +51,7 @@ const DeliveryDB = () => {
                         <td>Reaching</td>
                     </tr>
                 </tbody>
-                <tbody>
+                <tbody className={styles.last_child}>
                     <tr>
                         <td>Quang Huy</td>
                         <td>Tuan Quyen</td>
