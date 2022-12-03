@@ -4,10 +4,10 @@ import styles from "../../../css/CardDB.module.css"
 
 const CardDB = () => {
     return (
-        <div class='sales'>
-                    <span>
-                        <SiGoogleanalytics />
-                    </span>
+        <div className={styles.sales}>
+                    <div className={styles.logo}>
+                        <SiGoogleanalytics width={2} height={2} />
+                    </div>
                     <div className={styles.middle}>
                         <div className={styles.left}>
                             <h3>Total Sales</h3>
