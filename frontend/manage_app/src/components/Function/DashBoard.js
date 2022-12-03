@@ -2,6 +2,7 @@ import React from "react"
 import styles from "../../css/DashBoard.module.css"
 import { SiGoogleanalytics } from "react-icons/si"
 import CardDB from "./DashBoardco/CardDB"
+import DeliveryDB from "./DashBoardco/Delivery"
 
 const DashBoard = () => {
     return (
@@ -21,6 +22,7 @@ const DashBoard = () => {
                     <CardDB />
                 </div>
             </div>
+            <DeliveryDB/>
         </main>
     )
 }

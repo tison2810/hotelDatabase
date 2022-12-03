@@ -1,0 +1,20 @@
+.recent_deli{
+    margin-top: 2rem;
+}
+
+.recent_deli table{
+    background: white;
+    width: 100%;
+    border-radius:30px;
+    padding: 30px 20px;
+    text-align: center;
+    transition: ease 200ms all;
+
+}
+
+tbody td{
+    height: 2.8rem;
+    border-bottom: 1px solid #3ccf5c;
+    color: rgb(6, 95, 6);
+    font-weight: 500;
+}

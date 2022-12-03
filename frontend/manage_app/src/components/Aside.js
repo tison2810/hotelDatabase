@@ -75,7 +75,7 @@ const Aside = () => {
                 </div>
                 
             </aside>
-            <DashBoard/>
+            <DashBoard />
         </div>
     )
 }
