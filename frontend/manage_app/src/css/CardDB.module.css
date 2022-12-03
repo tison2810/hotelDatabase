@@ -4,7 +4,7 @@ small {
 }
 div .sales{
     background-color: white;
-    padding: 10px;
+    padding: 20px;
     border-radius: 40px ;
     margin-top: 1rem;
     transition: all 200ms ease;
@@ -21,6 +21,7 @@ div .sales .logo{
     height: fit-content;
     color: white;
     font-size: 1rem;
+    position: relative;
 }   
 div .sales .middle{
     display: flex;
@@ -40,4 +41,26 @@ div .sales .middle{
 .progress svg{
     width: 7rem;
     height: 7rem;
+}
+.progress svg circle{
+    fill:none;
+    stroke: #77cf24;
+    stroke-width: 14;
+    stroke-linecap: round;
+    transform: translate(5px, 5px);
+    stroke-dasharray:110;
+    stroke-dashoffset:92;
+}
+.progress .number{
+    position: relative;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.progress p{
+    font-weight: bold;
 }
