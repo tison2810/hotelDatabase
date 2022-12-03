@@ -21,7 +21,7 @@ div .sales .logo{
     height: fit-content;
     color: white;
     font-size: 1rem;
-    position: relative;
+    position: relative; 
 }   
 div .sales .middle{
     display: flex;

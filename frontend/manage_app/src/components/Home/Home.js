@@ -6,8 +6,7 @@ import Aside from '../Aside'
 const Home = () => {
     return (
         <>
-            <Aside/>
-            
+            <Aside/>    
         </>    
     )
 }
