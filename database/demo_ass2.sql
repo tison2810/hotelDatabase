@@ -7,7 +7,7 @@ CREATE TABLE Khach_hang(
     CMND INT NOT NULL,
     Ten	VARCHAR(45)	NOT NULL,
     Mail VARCHAR(45),
-    PRIMARY KEY (Ma_KH, CMND)
+    PRIMARY KEY (Ma_KH)
 );
 CREATE TABLE Nguoi_nhan(
 	Ma_KH INT NOT NULL,
