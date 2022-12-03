@@ -295,33 +295,30 @@ INSERT INTO bien_ban_nhan VALUE (106,'2018-9-1',3,5,24,4);
 INSERT INTO bien_ban_nhan VALUE (107,'2018-9-4',6,5,24,5);
 INSERT INTO bien_ban_nhan VALUE (108,'2018-9-17',5,3,20,5);
 
-INSERT INTO kien_hang VALUE (1,10,"Q1, TP HCM","Xuan Loc, Dong Nai","Do choi",5,100);
-INSERT INTO kien_hang VALUE (2,10,"Q2, TP HCM","Xuan Loc, Dong Nai","Do choi",5,100);
-INSERT INTO kien_hang VALUE (3,10,"Xuan Loc, Dong Nai","Q1, TP HCM","Noi that",5,101);
-INSERT INTO kien_hang VALUE (4,10,"Q1, TP HCM", "Xuan Loc, Dong Nai","Do choi",5,102);
+INSERT INTO kien_hang VALUE (1,10,"Q1, TP HCM","Xuan Loc, Dong Nai","Do choi",10,100);
+INSERT INTO kien_hang VALUE (2,5,"Q2, TP HCM","Xuan Loc, Dong Nai","Do choi",10,100);
+INSERT INTO kien_hang VALUE (3,20,"Xuan Loc, Dong Nai","Q1, TP HCM","Noi that",5,101);
+INSERT INTO kien_hang VALUE (4,4,"Q1, TP HCM", "Xuan Loc, Dong Nai","Do choi",5,102);
 INSERT INTO kien_hang VALUE (5,10,"Chau Doc, An Giang","Q2, TP HCM","Quan ao",5,103);
-INSERT INTO kien_hang VALUE (6,10,"Chau Doc, An Giang","Q2, TP HCM","Quan ao",5,103);
-INSERT INTO kien_hang VALUE (7,10,"Chau Doc, An Giang","Q2, TP HCM","Quan ao",5,103);
-INSERT INTO kien_hang VALUE (8,10,"Xuan Loc Dong Nai","Nha Trang Khanh Hoa","Sach",5,104);
-INSERT INTO kien_hang VALUE (9,10,"Xuan Loc Dong Nai","Nha Trang Khanh Hoa","Sach",5,104);
-
-
-
-INSERT INTO kien_hang VALUE (10,10,"Xuan Loc, Dong Nai","Q2, TP HCM","Vat Lieu",5,105);
-INSERT INTO kien_hang VALUE (11,10,"Nha Trang, Khanh Hoa","Xuan Loc, Dong Nai","Do choi",5,106);
-INSERT INTO kien_hang VALUE (12,10,"Nha Trang, Khanh Hoa","Xuan Loc, Dong Nai","Do choi",5,106);
-INSERT INTO kien_hang VALUE (13,10,"Nha Trang, Khanh Hoa","Xuan Loc, Dong Nai","Do choi",5,106);
-INSERT INTO kien_hang VALUE (14,10,"Nha Trang, Khanh Hoa","Xuan Loc, Dong Nai","Do choi",5,106);
-INSERT INTO kien_hang VALUE (15,10,"Xuan Loc, Dong Nai","Chau Doc, An Giang","Thuc pham",5,107);
-INSERT INTO kien_hang VALUE (16,10,"Xuan Loc, Dong Nai","Chau Doc, An Giang","Thuc pham",5,107);
-INSERT INTO kien_hang VALUE (17,10,"Xuan Loc, Dong Nai","Chau Doc, An Giang","Thuc pham",5,107);
-INSERT INTO kien_hang VALUE (18,10,"Xuan Loc, Dong Nai","Chau Doc, An Giang","Thuc pham",5,107);
-INSERT INTO kien_hang VALUE (19,10,"Nha Trang, Khanh Hoa","Q1, TP HCM","Vat lieu",5,108);
+INSERT INTO kien_hang VALUE (6,15,"Chau Doc, An Giang","Q2, TP HCM","Quan ao",15,103);
+INSERT INTO kien_hang VALUE (7,20,"Chau Doc, An Giang","Q2, TP HCM","Quan ao",15,103);
+INSERT INTO kien_hang VALUE (8,10,"Xuan Loc Dong Nai","Nha Trang Khanh Hoa","Sach",10,104);
+INSERT INTO kien_hang VALUE (9,15,"Xuan Loc Dong Nai","Nha Trang Khanh Hoa","Sach",10,104);
+INSERT INTO kien_hang VALUE (10,50,"Xuan Loc, Dong Nai","Q2, TP HCM","Vat Lieu",20,105);
+INSERT INTO kien_hang VALUE (11,20,"Nha Trang, Khanh Hoa","Xuan Loc, Dong Nai","Do choi",10,106);
+INSERT INTO kien_hang VALUE (12,10,"Nha Trang, Khanh Hoa","Xuan Loc, Dong Nai","Do choi",15,106);
+INSERT INTO kien_hang VALUE (13,20,"Nha Trang, Khanh Hoa","Xuan Loc, Dong Nai","Do choi",9,106);
+INSERT INTO kien_hang VALUE (14,30,"Nha Trang, Khanh Hoa","Xuan Loc, Dong Nai","Do choi",12,106);
+INSERT INTO kien_hang VALUE (15,40,"Xuan Loc, Dong Nai","Chau Doc, An Giang","Thuc pham",12,107);
+INSERT INTO kien_hang VALUE (16,20,"Xuan Loc, Dong Nai","Chau Doc, An Giang","Thuc pham",12,107);
+INSERT INTO kien_hang VALUE (17,5,"Xuan Loc, Dong Nai","Chau Doc, An Giang","Thuc pham",12,107);
+INSERT INTO kien_hang VALUE (18,5,"Xuan Loc, Dong Nai","Chau Doc, An Giang","Thuc pham",5,107);
+INSERT INTO kien_hang VALUE (19,60,"Nha Trang, Khanh Hoa","Q1, TP HCM","Vat lieu",5,108);
 INSERT INTO kien_hang VALUE (20,10,"Xuan Loc Dong Nai","Q2, TP HCM","Dung cu",5,109);
 INSERT INTO kien_hang VALUE (21,10,"Xuan Loc Dong Nai","Q2, TP HCM","Dung cu",5,109);
-INSERT INTO kien_hang VALUE (22,10,"Xuan Loc Dong Nai","Q2, TP HCM","Dung cu",5,109);
-INSERT INTO kien_hang VALUE (23,10,"Q1, TP HCM","Xuan Loc, Dong Nai","Do choi",5,110);
-INSERT INTO kien_hang VALUE (23,10,"Q1, TP HCM","Xuan Loc, Dong Nai","Do choi",5,110);
+INSERT INTO kien_hang VALUE (22,12,"Xuan Loc Dong Nai","Q2, TP HCM","Dung cu",5,109);
+INSERT INTO kien_hang VALUE (23,11,"Q1, TP HCM","Xuan Loc, Dong Nai","Do choi",5,110);
+INSERT INTO kien_hang VALUE (24,13,"Q1, TP HCM","Xuan Loc, Dong Nai","Do choi",5,110);
 
 
 /* -------------------------------------------------------------------------*/
@@ -338,6 +335,10 @@ INSERT INTO nhan_vien VALUE (10,11111110, "Ashe C Fall",0123456789);
 INSERT INTO nhan_vien VALUE (11,11111101, "Hito E Shin",1023456789);
 INSERT INTO nhan_vien VALUE (12,11111011, "Rogrydo D Paul",1203456789);
 INSERT INTO nhan_vien VALUE (13,11110111, "Macro K Flower",1230456789);
+INSERT INTO nhan_vien VALUE (14,11101111, "Macro K Micro",1234056789);
+INSERT INTO nhan_vien VALUE (15,11011111, "Pedri Modric",1234506789);
+INSERT INTO nhan_vien VALUE (16,10111111, "Harry Rammus",1234560789);
+INSERT INTO nhan_vien VALUE (17,01111111, "Henry Ford",1234567089);
 
 INSERT INTO nguoi_dieu_hanh VALUE (1);
 INSERT INTO nguoi_dieu_hanh VALUE (2);
@@ -355,8 +356,12 @@ INSERT INTO quan_ly_kho VALUE (10);
 INSERT INTO quan_ly_kho VALUE (11);
 
 INSERT INTO tai_xe_lien_tinh VALUE (12,"Class D");
+INSERT INTO tai_xe_lien_tinh VALUE (13,"Class D");
+INSERT INTO tai_xe_lien_tinh VALUE (14,"Class D");
 
-INSERT INTO lo_xe_lien_tinh VALUE (13);
+INSERT INTO lo_xe_lien_tinh VALUE (15);
+INSERT INTO lo_xe_lien_tinh VALUE (16);
+INSERT INTO lo_xe_lien_tinh VALUE (17);
 
 /*---------------------------------------------------------------------------*/
 INSERT INTO kho VALUE (1,150,"Xuan Loc, Dong Nai",48,7);
@@ -372,9 +377,9 @@ INSERT INTO xe_noi_thanh VALUE (204,"79N-88888",160);
 INSERT INTO xe_noi_thanh VALUE (205,"67G-12345",200);
 
 
-INSERT INTO cuoc_xe_noi_thanh VALUE (1,0,3,5,1,201);
-INSERT INTO cuoc_xe_noi_thanh VALUE (2,0,4,6,4,204);
-INSERT INTO cuoc_xe_noi_thanh VALUE (3,0,4,6,5,205);
+-- INSERT INTO cuoc_xe_noi_thanh VALUE (1,0,3,5,1,201);
+-- INSERT INTO cuoc_xe_noi_thanh VALUE (2,0,4,6,4,204);
+-- INSERT INTO cuoc_xe_noi_thanh VALUE (3,0,4,6,5,205);
 
 INSERT INTO cuoc_xe_noi_thanh VALUE (1,0,3,5,1,201);
 INSERT INTO cuoc_xe_noi_thanh VALUE (2,0,3,5,1,201);
@@ -392,6 +397,83 @@ INSERT INTO cuoc_xe_noi_thanh VALUE (12,0,4,6,4,204);
 INSERT INTO cuoc_xe_noi_thanh VALUE (13,0,3,5,5,205);
 INSERT INTO cuoc_xe_noi_thanh VALUE (14,0,3,5,5,205);
 
+/*------------------------------------------------------------------*/
+
+INSERT INTO bien_ban_xuat_nhap VALUE (1,'2015-3-14',"Nhap",7,1);
+INSERT INTO bien_ban_xuat_nhap VALUE (2,'2015-3-17',"Xuat",7,1);
+INSERT INTO bien_ban_xuat_nhap VALUE (3,'2016-2-14',"Nhap",8,2);
+INSERT INTO bien_ban_xuat_nhap VALUE (4,'2016-2-15',"Xuat",8,2);
+INSERT INTO bien_ban_xuat_nhap VALUE (5,'2016-3-17',"Nhap",7,1);
+INSERT INTO bien_ban_xuat_nhap VALUE (6,'2016-3-19',"Xuat",7,1);
+INSERT INTO bien_ban_xuat_nhap VALUE (7,'2016-7-1',"Nhap",9,3);
+INSERT INTO bien_ban_xuat_nhap VALUE (8,'2016-7-3',"Xuat",9,3);
+INSERT INTO bien_ban_xuat_nhap VALUE (9,'2016-11-15',"Nhap",10,4);
+INSERT INTO bien_ban_xuat_nhap VALUE (10,'2016-11-25',"Xuat",10,4);
+INSERT INTO bien_ban_xuat_nhap VALUE (11,'2017-1-13',"Nhap",9,3);
+INSERT INTO bien_ban_xuat_nhap VALUE (12,'2017-1-18',"Xuat",9,3);
+INSERT INTO bien_ban_xuat_nhap VALUE (13,'2017-3-20',"Nhap",7,1);
+INSERT INTO bien_ban_xuat_nhap VALUE (14,'2017-3-21',"Xuat",7,1);
+INSERT INTO bien_ban_xuat_nhap VALUE (15,'2017-3-25',"Nhap",11,5);
+INSERT INTO bien_ban_xuat_nhap VALUE (16,'2017-3-26',"Xuat",11,5);
+INSERT INTO bien_ban_xuat_nhap VALUE (17,'2017-3-29',"Nhap",8,2);
+INSERT INTO bien_ban_xuat_nhap VALUE (18,'2017-4-1',"Xuat",8,2);
+INSERT INTO bien_ban_xuat_nhap VALUE (19,'2017-4-1',"Nhap",9,3);
+INSERT INTO bien_ban_xuat_nhap VALUE (20,'2017-4-3',"Xuat",9,3);
+INSERT INTO bien_ban_xuat_nhap VALUE (21,'2017-5-11',"Nhap",7,1);
+INSERT INTO bien_ban_xuat_nhap VALUE (22,'2017-5-13',"Xuat",7,1);
+
+INSERT INTO bien_ban_xuat_nhap VALUE (23,'2018-1-17',"Nhap",7,1);
+INSERT INTO bien_ban_xuat_nhap VALUE (24,'2018-1-23',"Xuat",7,1);
+INSERT INTO bien_ban_xuat_nhap VALUE (25,'2018-1-24',"Nhap",8,2);
+INSERT INTO bien_ban_xuat_nhap VALUE (26,'2018-1-25',"Xuat",8,2);
+INSERT INTO bien_ban_xuat_nhap VALUE (27,'2018-2-1',"Nhap",7,1);
+INSERT INTO bien_ban_xuat_nhap VALUE (28,'2018-2-5',"Xuat",7,1);
+INSERT INTO bien_ban_xuat_nhap VALUE (29,'2018-3-12',"Nhap",9,3);
+INSERT INTO bien_ban_xuat_nhap VALUE (30,'2018-3-14',"Xuat",9,3);
+INSERT INTO bien_ban_xuat_nhap VALUE (31,'2018-6-1',"Nhap",7,1);
+INSERT INTO bien_ban_xuat_nhap VALUE (32,'2018-6-8',"Xuat",7,1);
+INSERT INTO bien_ban_xuat_nhap VALUE (33,'2018-8-15',"Nhap",7,1);
+INSERT INTO bien_ban_xuat_nhap VALUE (34,'2018-8-16',"Xuat",7,1);
+INSERT INTO bien_ban_xuat_nhap VALUE (35,'2018-9-1',"Nhap",10,4);
+INSERT INTO bien_ban_xuat_nhap VALUE (36,'2018-9-1',"Xuat",10,4);
+INSERT INTO bien_ban_xuat_nhap VALUE (37,'2018-9-2',"Nhap",11,5);
+INSERT INTO bien_ban_xuat_nhap VALUE (38,'2018-9-4',"Xuat",11,5);
+INSERT INTO bien_ban_xuat_nhap VALUE (39,'2018-9-13',"Nhap",11,5);
+INSERT INTO bien_ban_xuat_nhap VALUE (40,'2018-9-17',"Xuat",11,5);
+
+INSERT INTO xe_lien_tinh VALUE (1,"30F2-12345",200);
+INSERT INTO xe_lien_tinh VALUE (2,"20F1-12456",150);
+INSERT INTO xe_lien_tinh VALUE (3,"40Z1-12346",170);
+INSERT INTO xe_lien_tinh VALUE (4,"50F3-12347",170);
+INSERT INTO xe_lien_tinh VALUE (5,"30K2-12367",180);
 
 
+INSERT chuyen_xe_lien_tinh VALUE (1,2,50,15,12,1,2);
+INSERT chuyen_xe_lien_tinh VALUE (2,1,70,16,13,2,4);
+INSERT chuyen_xe_lien_tinh VALUE (3,1,50,17,14,3,6);
+INSERT chuyen_xe_lien_tinh VALUE (4,3,60,15,12,4,8);
+INSERT chuyen_xe_lien_tinh VALUE (5,2,150,16,13,5,10);
+INSERT chuyen_xe_lien_tinh VALUE (6,1,80,17,14,1,12);
+INSERT chuyen_xe_lien_tinh VALUE (7,4,150,15,12,2,14);
+INSERT chuyen_xe_lien_tinh VALUE (8,4,50,16,13,3,16);
+INSERT chuyen_xe_lien_tinh VALUE (9,1,50,17,14,4,18);
+INSERT chuyen_xe_lien_tinh VALUE (10,3,50,15,12,5,20);
+INSERT chuyen_xe_lien_tinh VALUE (11,2,150,16,13,1,22);
 
+INSERT chuyen_xe_lien_tinh VALUE (12,2,150,17,14,2,23);
+INSERT chuyen_xe_lien_tinh VALUE (13,1,60,15,12,3,25);
+INSERT chuyen_xe_lien_tinh VALUE (14,2,160,16,13,4,27);
+INSERT chuyen_xe_lien_tinh VALUE (15,2,40,17,14,5,29);
+INSERT chuyen_xe_lien_tinh VALUE (16,1,30,15,12,1,31);
+INSERT chuyen_xe_lien_tinh VALUE (17,2,40,16,13,2,33);
+INSERT chuyen_xe_lien_tinh VALUE (18,3,54,17,14,3,35);
+INSERT chuyen_xe_lien_tinh VALUE (19,6,40,15,12,4,37);
+INSERT chuyen_xe_lien_tinh VALUE (20,5,45,16,13,5,39);
+
+-- INSERT Ma_so VALUE (1,1,"",
+-- Ma_KH INT NOT NULL,
+--     Ma_so INT unique,
+--     Trang_thai VARCHAR(45),
+--     Ma_tx_noi_thanh INT NOT NULL, 
+--     Ma_chuyen INT NOT NULL, 
+--     Ma_bien_ban_gui INT NOT NULL
