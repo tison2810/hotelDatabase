@@ -4,7 +4,7 @@ import styles from "../../../css/CardDB.module.css"
 
 const CardDB = () => {
     return (
-        <div class='sales'>
+        <div className={styles.sales}>
                     <span>
                         <SiGoogleanalytics />
                     </span>

@@ -2,3 +2,10 @@ small {
     font-size: 0.87rem;
     color: rgb(66, 68, 70);
 }
+div .sales{
+    background-color: white;
+    padding: 10px;
+    border-radius: 40px ;
+    margin-top: 1rem;
+    transition: all 200ms ease;
+}
