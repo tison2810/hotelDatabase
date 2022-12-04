@@ -1,4 +1,4 @@
-DROP SCHEMA xxx;
+
 CREATE SCHEMA xxx;
 
 USE xxx;
@@ -48,11 +48,7 @@ CREATE TABLE Nhan_vien(
 	Ma_NV INT NOT NULL,
     CMND INT NOT NULL,
     Ten	VARCHAR(45)	NOT NULL,
-<<<<<<< HEAD
-    So_dien_thoai VARCHAR(12),
-=======
     So_dien_thoai VARCHAR(25),
->>>>>>> afe07cf5c079550bd93523035e2508f215b2c109
     PRIMARY KEY (Ma_NV, CMND)
 );
 CREATE TABLE Nguoi_dieu_hanh(
@@ -353,7 +349,7 @@ INSERT INTO nhan_hang VALUE (24,108);
 
 /* -------------------------------------------------------------------------*/
 INSERT INTO nhan_vien VALUE (1,111111111,"Akali A Bliztcrank",1234567890);
-INSERT INTO nhan_vien VALUE (2,111111112,"Aatrox C Maximant",2345678903);
+INSERT INTO nhan_vien VALUE (2,111111112,"Aatrox C Maximant",2345678901);
 INSERT INTO nhan_vien VALUE (3,111111113, "Cristiano Ronaldo",3456789012);
 INSERT INTO nhan_vien VALUE (4,111111114, "Lionel Messi",4567890123);
 INSERT INTO nhan_vien VALUE (5,111111115, "Lionel Messi",5678901234);
@@ -392,11 +388,6 @@ INSERT INTO tai_xe_lien_tinh VALUE (14,"Class D");
 INSERT INTO lo_xe_lien_tinh VALUE (15);
 INSERT INTO lo_xe_lien_tinh VALUE (16);
 INSERT INTO lo_xe_lien_tinh VALUE (17);
-
-INSERT INTO tinh VALUE (2,"HO CHI MINH");
-INSERT INTO tinh VALUE (41,"KHANH HOA");
-INSERT INTO tinh VALUE (48,"DONG NAI");
-INSERT INTO tinh VALUE (51,"AN GIANG");
 
 /*---------------------------------------------------------------------------*/
 INSERT INTO tinh VALUE (2,"HO CHI MINH");
@@ -451,38 +442,6 @@ INSERT INTO xe_lien_tinh VALUE (4,"50F3-12347",170);
 INSERT INTO xe_lien_tinh VALUE (5,"30K2-12367",180);
 
 
-<<<<<<< HEAD
-INSERT INTO chuyen_xe_lien_tinh VALUE (1,2,50,15,12,1,2);
-INSERT INTO chuyen_xe_lien_tinh VALUE (2,1,70,16,13,2,4);
-INSERT INTO chuyen_xe_lien_tinh VALUE (3,1,50,17,14,3,6);
-INSERT INTO chuyen_xe_lien_tinh VALUE (4,3,60,15,12,4,8);
-INSERT INTO chuyen_xe_lien_tinh VALUE (5,2,150,16,13,5,10);
-INSERT INTO chuyen_xe_lien_tinh VALUE (6,1,80,17,14,1,12);
-INSERT INTO chuyen_xe_lien_tinh VALUE (7,4,150,15,12,2,14);
-INSERT INTO chuyen_xe_lien_tinh VALUE (8,4,50,16,13,3,16);
-INSERT INTO chuyen_xe_lien_tinh VALUE (9,1,50,17,14,4,18);
-INSERT INTO chuyen_xe_lien_tinh VALUE (10,3,50,15,12,5,20);
-INSERT INTO chuyen_xe_lien_tinh VALUE (11,2,150,16,13,1,22);
-
-
-INSERT INTO chuyen_xe_lien_tinh VALUE (12,2,150,17,14,2,23);
-INSERT INTO chuyen_xe_lien_tinh VALUE (13,1,60,15,12,3,25);
-INSERT INTO chuyen_xe_lien_tinh VALUE (14,2,160,16,13,4,27);
-INSERT INTO chuyen_xe_lien_tinh VALUE (15,2,40,17,14,5,29);
-INSERT INTO chuyen_xe_lien_tinh VALUE (16,1,30,15,12,1,31);
-INSERT INTO chuyen_xe_lien_tinh VALUE (17,2,40,16,13,2,33);
-INSERT INTO chuyen_xe_lien_tinh VALUE (18,3,54,17,14,3,35);
-INSERT INTO chuyen_xe_lien_tinh VALUE (19,6,40,15,12,4,37);
-INSERT INTO chuyen_xe_lien_tinh VALUE (20,5,45,16,13,5,39);
-
-
-INSERT INTO Yeu_cau VALUE (1,1,"",3,1,100);
-INSERT INTO Yeu_cau VALUE (1,2,"",3,2,102);
-INSERT INTO Yeu_cau VALUE (3,3,"",4,3,103);
-INSERT INTO Yeu_cau VALUE (1,4,"",3,4,104);
-INSERT INTO Yeu_cau VALUE (6,5,"",4,5,106);
-INSERT INTO Yeu_cau VALUE (6,6,"",4,6,107);
-=======
 INSERT INTO chuyen_xe_lien_tinh VALUE (1,2,50,15,12,1);
 INSERT INTO chuyen_xe_lien_tinh VALUE (2,1,70,16,13,2);
 INSERT INTO chuyen_xe_lien_tinh VALUE (3,1,50,17,14,3);
@@ -531,7 +490,6 @@ INSERT INTO bien_ban_xuat_nhap VALUE (22,'2018-9-13',"Nhap",8,2,11);
 
 
 
->>>>>>> afe07cf5c079550bd93523035e2508f215b2c109
 
 INSERT INTO cho VALUE (1,1);
 INSERT INTO cho VALUE (2,1);
@@ -557,8 +515,6 @@ INSERT INTO cho VALUE (21,10);
 INSERT INTO cho VALUE (22,10);
 INSERT INTO cho VALUE (23,11);
 INSERT INTO cho VALUE (24,11);
-<<<<<<< HEAD
-=======
 
 
 
@@ -567,13 +523,13 @@ INSERT INTO cho VALUE (24,11);
 -- 	Ma_chuyen INT,
 
 
-INSERT INTO Yeu_cau VALUE (1,1,"",3,1,100);
-INSERT INTO Yeu_cau VALUE (1,2,"",3,2,102);
-INSERT INTO Yeu_cau VALUE (3,3,"",4,3,103);
-INSERT INTO Yeu_cau VALUE (1,4,"",3,4,106);
-INSERT INTO Yeu_cau VALUE (6,5,"",4,5,107);
-INSERT INTO Yeu_cau VALUE (2,6,"",3,6,108);
-INSERT INTO Yeu_cau VALUE (1,7,"",4,6,110);
+INSERT INTO Yeu_cau VALUE (1,1,"Chưa xử lý",3,1,100);
+INSERT INTO Yeu_cau VALUE (1,2,"Chưa xử lý",3,2,102);
+INSERT INTO Yeu_cau VALUE (3,3,"Chưa xử lý",4,3,103);
+INSERT INTO Yeu_cau VALUE (1,4,"Chưa xử lý",3,4,106);
+INSERT INTO Yeu_cau VALUE (6,5,"Chưa xử lý",4,5,107);
+INSERT INTO Yeu_cau VALUE (2,6,"Chưa xử lý",3,6,108);
+INSERT INTO Yeu_cau VALUE (1,7,"Chưa xử lý",4,6,110);
 
 INSERT INTO uoc_luong VALUE (1,1,1,"Do Choi",10,15);
 INSERT INTO uoc_luong VALUE (1,1,2,"Do Choi",10,15);
@@ -598,7 +554,6 @@ INSERT INTO uoc_luong VALUE (1,7,1,"Do choi",5,1);
 --     Loai_hang VARCHAR(255),
 --     Khoi_luong INT,
 --     So_luong INT,
->>>>>>> afe07cf5c079550bd93523035e2508f215b2c109
 -- Ma_KH INT NOT NULL,
 --     Ma_so INT unique,
 --     Trang_thai VARCHAR(45),
@@ -616,3 +571,5 @@ INSERT INTO dieu_phoi VALUE (1,4);
 INSERT INTO dieu_phoi VALUE (2,5);
 INSERT INTO dieu_phoi VALUE (2,6);
 INSERT INTO dieu_phoi VALUE (2,7);
+
+
