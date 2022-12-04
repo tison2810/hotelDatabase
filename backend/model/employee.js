@@ -16,7 +16,6 @@ module.exports = class Employee {
         );
     }
     static fetchAll() {
-        console.log("Connect");
         const rows = 'SELECT * FROM employee';    
         return rows;
         
