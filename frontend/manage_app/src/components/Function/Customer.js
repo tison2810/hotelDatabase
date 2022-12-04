@@ -2,11 +2,11 @@ import React from "react";
 import { useEffect, useState } from "react";
 
 
-const Employee = () => {
-    const [listEmployee, SetListEmployee] = useState([])
+const Customer = () => {
+    const [listCustomer, SetListCustomer] = useState([])
 
     useEffect(() => {
-        fetch("http://localhost:8080/employee/get")
+        fetch("http://localhost:8080/customer/get")
             .then(res => {
                 if (res.status !== 200) {
                     throw new Error('Failed to fetch user status.');
@@ -14,34 +14,34 @@ const Employee = () => {
                 return res.json();
             })
             .then(resData => {
-                SetListEmployee(resData);
+                SetListCustomer(resData);
             })
             .catch(err => {
                 console.log(err);
             })
 
-    }, [listEmployee])
+    }, [listCustomer])
 
     return (
         <div>
-            <h1>Employee</h1>
+            <h1>Customer</h1>
             <table>
                 <thead>
                     <tr>
                         <td>ID</td>
                         <td>CMND</td>
                         <td>Name</td>
-                        <td>Phone Number</td>
+                        <td>Mail</td>
                     </tr>  
                 </thead>
-                {listEmployee.map(employee => {
+                {listCustomer.map(customer => {
                     return (
                         <tbody>
                             <tr>
-                                <td>{employee.Ma_NV}</td>
-                                <td>{employee.CMND}</td>
-                                <td>{employee.Ten}</td>
-                                <td>{employee.So_dien_thoai}</td>
+                                <td>{customer.Ma_KH}</td>
+                                <td>{customer.CMND}</td>
+                                <td>{customer.Ten}</td>
+                                <td>{customer.Mail}</td>
                             </tr>
                         </tbody>
                     )
@@ -51,4 +51,4 @@ const Employee = () => {
         </div>
     )
 }
-export default Employee
+export default Customer

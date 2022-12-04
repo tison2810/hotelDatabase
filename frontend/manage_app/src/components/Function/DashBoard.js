@@ -1,8 +1,8 @@
 import React from "react"
 import styles from "../../css/DashBoard.module.css"
-import { SiGoogleanalytics } from "react-icons/si"
+//import { SiGoogleanalytics } from "react-icons/si"
 import CardDB from "./DashBoardco/CardDB"
-import DeliveryDB from "./DashBoardco/Delivery"
+import DeliveryDB from "./DashBoardco/DeliveryDB"
 
 const DashBoard = () => {
     return (
@@ -12,9 +12,9 @@ const DashBoard = () => {
                 <input type="date"/>
             </div>
             <div className={styles.insights}>
-                
+                <div>
                     <CardDB />
-                
+                </div>
                 <div>
                     <CardDB />
                 </div>

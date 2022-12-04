@@ -4,6 +4,10 @@ const bodyParser = require('body-parser');
 
 
 const employeeRoute = require('./routes/Employee.js');
+const customerRoute = require('./routes/Customer.js');
+const productRoute = require('./routes/Product.js');
+const warehouseRoute = require('./routes/Warehouse.js');
+const reportRoute = require('./routes/Report.js');
 
 app.use(bodyParser.json());
 
@@ -19,6 +23,10 @@ app.use((req, res, next) => {
 })
 
 app.use(employeeRoute);
+app.use(customerRoute);
+app.use(productRoute);
+app.use(warehouseRoute);
+app.use(reportRoute);
 
 app.listen(8080, (req, res, next) => {
     console.log('Server is listen on port 8080')

@@ -1,14 +1,12 @@
-const Employee = require('../model/employee');
 const db = require('../util/database')
+const Product = require('../model/product');
 
-exports.getEmployees = (req, res, next) => {    
-    let sql = Employee.fetchAll();
+exports.getProducts = (req, res, next) => {
+    let sql = Product.fetchAll();
     db.query(sql, (err, result) => {
         if (err) console.log(err);
         else {
             res.json(result);
         }
     });
-    
-} 
- 
+}

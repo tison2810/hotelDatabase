@@ -2,11 +2,11 @@ import React from "react";
 import { useEffect, useState } from "react";
 
 
-const Employee = () => {
-    const [listEmployee, SetListEmployee] = useState([])
+const WareHouse = () => {
+    const [listWarehouse, SetWarehouse] = useState([])
 
     useEffect(() => {
-        fetch("http://localhost:8080/employee/get")
+        fetch("http://localhost:8080/warehouse/get")
             .then(res => {
                 if (res.status !== 200) {
                     throw new Error('Failed to fetch user status.');
@@ -14,34 +14,37 @@ const Employee = () => {
                 return res.json();
             })
             .then(resData => {
-                SetListEmployee(resData);
+                SetWarehouse(resData);
             })
             .catch(err => {
                 console.log(err);
             })
 
-    }, [listEmployee])
+    }, [listWarehouse])
 
     return (
         <div>
-            <h1>Employee</h1>
+            <h1>WareHouse</h1>
             <table>
                 <thead>
                     <tr>
                         <td>ID</td>
-                        <td>CMND</td>
-                        <td>Name</td>
-                        <td>Phone Number</td>
+                        <td>Square</td>
+                        <td>Address</td>
+                        <td>Province Code</td>
+                        <td>Manager ID</td>
+                        
                     </tr>  
                 </thead>
-                {listEmployee.map(employee => {
+                {listWarehouse.map(warehouse => {
                     return (
                         <tbody>
                             <tr>
-                                <td>{employee.Ma_NV}</td>
-                                <td>{employee.CMND}</td>
-                                <td>{employee.Ten}</td>
-                                <td>{employee.So_dien_thoai}</td>
+                                <td>{warehouse.Ma_Kho}</td>
+                                <td>{warehouse.Dien_tich}</td>
+                                <td>{warehouse.Dia_chi}</td>
+                                <td>{warehouse.ma_tinh}</td>
+                                <td>{warehouse.ma_nv_quan_ly_kho}</td>
                             </tr>
                         </tbody>
                     )
@@ -51,4 +54,4 @@ const Employee = () => {
         </div>
     )
 }
-export default Employee
+export default WareHouse

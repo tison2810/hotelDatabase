@@ -3,11 +3,11 @@ import styles from "../css/Aside.module.css"
 import { AiOutlineCloseCircle } from "react-icons/ai";
 import { MdDashboard,MdProductionQuantityLimits } from "react-icons/md"
 import { BsFillPersonFill } from "react-icons/bs"
-import { CiDeliveryTruck } from "react-icons/ci"
 import { FiUsers } from "react-icons/fi"
 import { FaWarehouse } from "react-icons/fa"
 import { GrFormAdd } from "react-icons/gr"
 import { CiLogout } from "react-icons/ci"
+import {FaFileWord} from "react-icons/fa"
 import DashBoard from "./Function/DashBoard";
 
 const Aside = () => {
@@ -37,9 +37,9 @@ const Aside = () => {
                     </a>   
                     <a href="#">
                         <span>
-                            <CiDeliveryTruck />
+                            <FaFileWord />
                         </span>
-                        <h3>Delivery</h3>
+                        <h3>Report</h3>
                     </a>   
                     <a href="#">
                         <span>
