@@ -526,10 +526,27 @@ INSERT INTO cho VALUE (24,11);
 INSERT INTO Yeu_cau VALUE (1,1,"",3,1,100);
 INSERT INTO Yeu_cau VALUE (1,2,"",3,2,102);
 INSERT INTO Yeu_cau VALUE (3,3,"",4,3,103);
-INSERT INTO Yeu_cau VALUE (1,4,"",3,4,104);
-INSERT INTO Yeu_cau VALUE (6,5,"",4,5,106);
-INSERT INTO Yeu_cau VALUE (6,6,"",4,6,107);
+INSERT INTO Yeu_cau VALUE (1,4,"",3,4,106);
+INSERT INTO Yeu_cau VALUE (6,5,"",4,5,107);
+INSERT INTO Yeu_cau VALUE (2,6,"",3,6,108);
+INSERT INTO Yeu_cau VALUE (1,7,"",4,6,110);
 
+INSERT INTO uoc_luong VALUE (1,1,1,"Do Choi",10,15);
+INSERT INTO uoc_luong VALUE (1,1,2,"Do Choi",10,15);
+INSERT INTO uoc_luong VALUE (1,2,1,"Do Choi",10,15);
+INSERT INTO uoc_luong VALUE (3,3,1,"Noi that",24,1);
+INSERT INTO uoc_luong VALUE (3,3,2,"Noi that",24,1);
+INSERT INTO uoc_luong VALUE (3,3,3,"Noi that",24,2);
+INSERT INTO uoc_luong VALUE (1,4,1,"Do choi",10,15);
+INSERT INTO uoc_luong VALUE (1,4,2,"Do choi",15,15);
+INSERT INTO uoc_luong VALUE (1,4,3,"Do Choi",12,12);
+INSERT INTO uoc_luong VALUE (1,4,4,"Do choi",12,12);
+INSERT INTO uoc_luong VALUE (6,5,1,"Thuc pham",12,1);
+INSERT INTO uoc_luong VALUE (6,5,2,"Thuc pham",12,1);
+INSERT INTO uoc_luong VALUE (6,5,3,"Thuc pham",12,1);
+INSERT INTO uoc_luong VALUE (6,5,4,"Thuc pham",12,1);
+INSERT INTO uoc_luong VALUE (2,6,1,"Vat lieu",5,1);
+INSERT INTO uoc_luong VALUE (1,7,1,"Do choi",5,1);
 
 -- Ma_KH INT NOT NULL,
 --     Ma_so INT NOT NULL,
@@ -543,3 +560,14 @@ INSERT INTO Yeu_cau VALUE (6,6,"",4,6,107);
 --     Ma_tx_noi_thanh INT NOT NULL, 
 --     Ma_chuyen INT NOT NULL, 
 --     Ma_bien_ban_gui INT NOT NULL
+
+INSERT INTO dieu_hanh VALUE (1,3);
+INSERT INTO dieu_hanh VALUE (2,4);
+
+INSERT INTO dieu_phoi VALUE (1,1);
+INSERT INTO dieu_phoi VALUE (1,2);
+INSERT INTO dieu_phoi VALUE (1,3);
+INSERT INTO dieu_phoi VALUE (1,4);
+INSERT INTO dieu_phoi VALUE (2,5);
+INSERT INTO dieu_phoi VALUE (2,6);
+INSERT INTO dieu_phoi VALUE (2,7);
