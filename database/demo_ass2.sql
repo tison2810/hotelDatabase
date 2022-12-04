@@ -1,4 +1,4 @@
-DROP SCHEMA xxx;
+
 CREATE SCHEMA xxx;
 
 USE xxx;
@@ -523,13 +523,13 @@ INSERT INTO cho VALUE (24,11);
 -- 	Ma_chuyen INT,
 
 
-INSERT INTO Yeu_cau VALUE (1,1,"",3,1,100);
-INSERT INTO Yeu_cau VALUE (1,2,"",3,2,102);
-INSERT INTO Yeu_cau VALUE (3,3,"",4,3,103);
-INSERT INTO Yeu_cau VALUE (1,4,"",3,4,106);
-INSERT INTO Yeu_cau VALUE (6,5,"",4,5,107);
-INSERT INTO Yeu_cau VALUE (2,6,"",3,6,108);
-INSERT INTO Yeu_cau VALUE (1,7,"",4,6,110);
+INSERT INTO Yeu_cau VALUE (1,1,"Chưa xử lý",3,1,100);
+INSERT INTO Yeu_cau VALUE (1,2,"Chưa xử lý",3,2,102);
+INSERT INTO Yeu_cau VALUE (3,3,"Chưa xử lý",4,3,103);
+INSERT INTO Yeu_cau VALUE (1,4,"Chưa xử lý",3,4,106);
+INSERT INTO Yeu_cau VALUE (6,5,"Chưa xử lý",4,5,107);
+INSERT INTO Yeu_cau VALUE (2,6,"Chưa xử lý",3,6,108);
+INSERT INTO Yeu_cau VALUE (1,7,"Chưa xử lý",4,6,110);
 
 INSERT INTO uoc_luong VALUE (1,1,1,"Do Choi",10,15);
 INSERT INTO uoc_luong VALUE (1,1,2,"Do Choi",10,15);
@@ -571,3 +571,5 @@ INSERT INTO dieu_phoi VALUE (1,4);
 INSERT INTO dieu_phoi VALUE (2,5);
 INSERT INTO dieu_phoi VALUE (2,6);
 INSERT INTO dieu_phoi VALUE (2,7);
+
+
