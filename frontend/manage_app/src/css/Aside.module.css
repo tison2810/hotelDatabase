@@ -117,3 +117,66 @@ aside .sidebar a:hover span{
     height: 45px;
     border-radius: 50%;
 }
+.right .updates {
+    margin-top: 1rem;
+}
+.right h2{
+    margin-bottom: 0.8rem;
+}
+.right .updates{
+    background-color: white;
+    padding: 30px 20px;
+    border-radius: 20px ;
+    transition: all 200ms ease;
+}
+.right .updates .update{
+    display: grid;
+    grid-template-columns: 2.6rem auto;
+    gap:2rem;
+    margin-top: 1rem;
+}
+.right .annoucement{
+    margin-top: 2rem;
+}
+.annoucement h2{
+    margin-bottom: 0.8rem;
+}
+.annoucement .annoucetitle{
+    display: grid;
+    grid-template-columns: 9rem auto;
+    gap: 1rem
+}
+.title h3{
+    color: rgb(31, 196, 53);
+}
+.note{
+    background-color: white;
+    padding: 20px 20px;
+    border-radius: 20px ;
+    transition: all 200ms ease;
+    
+    height: 370px;
+}
+.over{
+    overflow-x: auto;
+    height: 340px;
+}
+.buttonAdd{
+    margin-top: 1rem;
+}
+.buttonAdd button{
+    width: 100%;
+    padding: 20px 110px;
+    color: rgb(26, 207, 50);
+    background-color: rgb(0, 0, 0, 0);
+    font-size: 20px;
+    font-weight: bold;
+    border-radius: 20px;
+    transition: 200ms all ease;
+    border: 1px rgb(26, 207, 50) dashed;
+}
+.buttonAdd button:hover{
+    background-color: #acd4b1;
+    top: 10px;
+    cursor: pointer;
+}

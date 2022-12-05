@@ -6,7 +6,8 @@ import { BsFillPersonFill } from "react-icons/bs"
 import { FiUsers } from "react-icons/fi"
 import { FaWarehouse } from "react-icons/fa"
 import { CiLogout } from "react-icons/ci"
-import {FaFileWord} from "react-icons/fa"
+import { FaFileWord } from "react-icons/fa"
+import {TfiAnnouncement} from "react-icons/tfi"
 import DashBoard from "./Function/DashBoard";
 import { BrowserRouter,Routes, Route, Link } from 'react-router-dom'
 import Customer from "../components/Function/Customer"
@@ -93,7 +94,7 @@ const Aside = () => {
                             <small>Admin</small>
                         </div>
                         <div className={styles.profile_photo}>
-                            <img src={require('../image/avatar.jpg')} alt='admin'/>
+                            <img src={require('../image/huy.jpg')} alt='admin'/>
                         </div>
                     </div>
                 </div>
@@ -105,30 +106,86 @@ const Aside = () => {
                             <div className={styles.profile_photo}>
                                 <img src={require('../image/avatar.jpg')} alt='admin'/>
                             </div>
-                        </div>  
-                        <div>
-                            <p><b>Quyen Nguyen</b> has update Product with quantity 2</p>
-                            <p>Updated 1 weeks ago</p>
-                        </div>
-                        <div className={styles.update}>
-                            <div className={styles.profile_photo}>
-                                <img src={require('../image/avatar.jpg')} alt='admin'/>
+                             <div>
+                                <p><b>Quyen Nguyen</b> has update Product with quantity 2</p>
+                                <small>Updated 1 weeks ago</small>
                             </div>
                         </div>  
-                        <div>
+                       
+                        <div className={styles.update}>
+                            <div className={styles.profile_photo}>
+                                <img src={require('../image/khoa.jpg')} alt='admin'/>
+                            </div>
+                            <div>
                             <p><b>Khoa Anh</b> has update WareHouse with quantity 1</p>
-                            <p>Updated 2 weeks ago</p>
+                            <small>Updated 2 weeks ago</small>
 
-                        </div>
+                         </div>
+                        </div>  
+                        
                         <div className={styles.update}>
                             <div className={styles.profile_photo}>
-                                <img src={require('../image/avatar.jpg')} alt='admin'/>
+                                <img src={require('../image/dung.jpg')} alt='admin'/>
                             </div>
+                            <div>
+                                <p><b>Dung Quoc</b> has delete Employe with quantity 3</p>
+                                <small>Updated 1 weeks ago</small> 
+                             </div>
                         </div>  
-                        <div>
-                            <p><b>Dung Quoc</b> has delete Employe with quantity 3</p>
-                            <p>Updated 1 weeks ago</p> 
+                        
+                    </div>
+                </div>
+
+                <div className={styles.annoucement}>
+                    <div className={styles.annoucetitle}>
+                        <h2>Annoucement</h2>
+                
+                        <TfiAnnouncement style={{width:'30px', height:'25px', color:'green'}} />
+                    </div>
+                    <div className={styles.note}>
+                        <div className={styles.over}>
+                        <div className={styles.right}>
+                            <div className={styles.title}>
+                                <h3>BROKEN TRUNKS</h3>
+                                <small>Last 24 hours ago</small>
+                            </div>
+                            <p>Some Trunks have been broken, fix it quickly</p>
                         </div>
+                        <div className={styles.right}>
+                            <div className={styles.title}>
+                                <h3>NEXT MEETING</h3>
+                                <small>Last 24 hours ago</small>
+                            </div>
+                            <p>The next meeting will be occured on Tuesday, 6th December, 2022</p>
+                        </div>
+                        <div className={styles.right}>
+                            <div className={styles.title}>
+                                <h3>FIRED EMPLOYEE</h3>
+                                <small>Last 24 hours ago</small>
+                            </div>
+                            <p>Elen has been fired for some reason, detail in the next meeting</p>
+                        </div>
+                        <div className={styles.right}>
+                            <div className={styles.title}>
+                                <h3>NEW SUCCESS</h3>
+                                <small>Last 24 hours ago</small>
+                            </div>
+                            <p>Our Assignment will get High grade</p>
+                        </div>
+                        <div className={styles.right}>
+                            <div className={styles.title}>
+                                <h3>BE CAREFUL</h3>
+                                <small>Last 24 hours ago</small>
+                            </div>
+                            <p>The new Tower is being builed, don't enter the dangerous place</p>
+                        </div>
+                        </div>    
+                    </div>
+                </div>
+
+                <div style={{display:'flex', justifyContent:'center'}}>
+                    <div className={styles.buttonAdd}>
+                        <button>Add Annoucement</button>
                     </div>
                 </div>
             </div>
