@@ -1,5 +1,6 @@
 import React from "react";
 import { useEffect, useState } from "react";
+import styles from "../../css/Part.module.css"
 
 
 const Customer = () => {
@@ -23,8 +24,12 @@ const Customer = () => {
     }, [listCustomer])
 
     return (
-        <div>
+        <div className={styles.container}>
             <h1>Customer</h1>
+            <div className={styles.note}>
+                <p><i>Last updated 24h ago</i></p>
+            </div>
+            <main>
             <table>
                 <thead>
                     <tr>
@@ -47,7 +52,8 @@ const Customer = () => {
                     )
                 })}
 
-            </table>
+                </table>
+            </main>
         </div>
     )
 }

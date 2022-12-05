@@ -1,5 +1,7 @@
 import React from "react";
 import { useEffect, useState } from "react";
+import styles from "../../css/Part.module.css"
+
 
 
 const WareHouse = () => {
@@ -21,10 +23,14 @@ const WareHouse = () => {
             })
 
     }, [listWarehouse])
-
+    
     return (
-        <div>
-            <h1>WareHouse</h1>
+        <div className={styles.container}>
+            <h1>Warehouse</h1>
+            <div className={styles.note}>
+                <p><i>Last updated 24h ago</i></p>
+            </div>
+            <main>
             <table>
                 <thead>
                     <tr>
@@ -40,7 +46,7 @@ const WareHouse = () => {
                     return (
                         <tbody>
                             <tr>
-                                <td>{warehouse.Ma_Kho}</td>
+                                <td>{warehouse.Ma_kho}</td>
                                 <td>{warehouse.Dien_tich}</td>
                                 <td>{warehouse.Dia_chi}</td>
                                 <td>{warehouse.ma_tinh}</td>
@@ -50,7 +56,8 @@ const WareHouse = () => {
                     )
                 })}
 
-            </table>
+                </table>
+            </main>
         </div>
     )
 }

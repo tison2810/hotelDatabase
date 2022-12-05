@@ -1,5 +1,7 @@
 import React from "react";
 import { useEffect, useState } from "react";
+import styles from "../../css/Part.module.css"
+
 
 
 const Product = () => {
@@ -23,8 +25,12 @@ const Product = () => {
     }, [listProduct])
 
     return (
-        <div>
+        <div className={styles.container}>
             <h1>Product</h1>
+            <div className={styles.note}>
+                <p><i>Last updated 24h ago</i></p>
+            </div>
+            <main>
             <table>
                 <thead>
                     <tr>
@@ -53,7 +59,8 @@ const Product = () => {
                     )
                 })}
 
-            </table>
+                </table>
+            </main>
         </div>
     )
 }

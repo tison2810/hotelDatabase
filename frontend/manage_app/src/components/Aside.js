@@ -83,8 +83,19 @@ const Aside = () => {
                     <Route path="/product" element={<Product/>} />
                     <Route path="/employees" element={<Employee />} />
                     <Route path="/warehouse" element={<WareHouse/>} />
-                </Routes>
+            </Routes>
+
+            <div className={styles.right}>
+                <div className={styles.top}>
+                    <div className={styles.profiles}>
+                        <div class="info">
+                            <p>Welcome back, <b></b> </p>
+                        </div>
+
+                    </div>
+                </div>
             </div>
+        </div>
     )
 }
 export default Aside 
