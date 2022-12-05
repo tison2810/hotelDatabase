@@ -19,20 +19,30 @@ exports.addReports = (req, res, next) => {
     const transport_code = req.body.transport_code;
     let sql = Report.Save();
     db.execute(sql, [id, ngayxuat, tinhtrang, manager_id, warehouse_code, transport_code]);
+    res.send('Success, Back to Your App');
 }
 exports.deleteReport = (req, res, next) => {
     const id = req.body.id;
+    if (!id || isNaN(id)) {
+        res.send('parameter error');
+        return;
+    }
     let sql = Report.deleteById();
     db.execute(sql, [id]);
+    res.send('Success, Back to Your App');
 }
 exports.findReportbyId = (req, res, next) => {
-    const id = req.body.id;
-    let sql = Report.filterById();
-    db.execute(sql, [id], (err, result) => {
-            if (err) console.log(err);
-            else {
-                res.json(result);
-            }
+    let id = req.query.id;
+    if (!id || isNaN(id)) {
+        res.send('parameter error');
+        return;
+    }
+    let sql = Report.filterById() + String(id);
+    db.execute(sql, (err, result) => {
+        if (err) console.log(err);
+        else {
+            res.json(result);
         }
-    );
+    });
+    
 }

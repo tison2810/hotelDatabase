@@ -1,14 +1,15 @@
 import React from "react"
+import styles from "../../../css/InsertForm.module.css"
 
-const DeleteForm = () => {
+const FilterForm = () => {
     return (
-        <form action="http://localhost:8080/report/filter" method="POST">
-            <div class="form-control">
-                <label for="id">ID Report</label>
-                <input type="text" name="id" id="title" />
+        <form className={styles.container} action="http://localhost:8080/report/filter" method="GET">
+            <div className={styles.form_control}>
+                <label for="id">ID Search:</label>
+                <input type="number" name="id" id="title" />
             </div>
-            <button class="btn" type="submit"> Submit </button>
+            <button className={styles.btn} type="submit"> Submit </button>
         </form>
     )
 }
-export default DeleteForm;
+export default FilterForm;

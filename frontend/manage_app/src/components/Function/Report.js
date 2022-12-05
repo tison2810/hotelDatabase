@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import styles from "../../css/Part.module.css"
 import InsertForm from "./ReportFunction/Insertreport";
 import DeleteForm from "./ReportFunction/DeleteReport";
-
+import FilterForm from "./ReportFunction/FilterReport";
 
 
 const Report = () => {
@@ -11,6 +11,7 @@ const Report = () => {
     const [insertRe, SetInsertRe] = useState(false);
     const [deleteRe, SetDeleteRe] = useState(false);
     const [filter, SetFilter] = useState(false);
+
 
     function InsertReport() {
         if (insertRe === false) {
@@ -65,7 +66,7 @@ const Report = () => {
             .catch(err => {
                 console.log(err);
             })
-
+        
     }, [listReport])
 
     return (
@@ -114,7 +115,7 @@ const Report = () => {
             } 
             {(!insertRe && deleteRe && !filter) && <DeleteForm/>
             } 
-            {(!insertRe && !deleteRe && filter) && <h1>H3</h1>
+            {(!insertRe && !deleteRe && filter) && <FilterForm/>
             } 
         
         </div>
