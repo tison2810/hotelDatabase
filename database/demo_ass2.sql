@@ -1,4 +1,4 @@
-
+DROP SCHEMA xxx;
 CREATE SCHEMA xxx;
 
 USE xxx;
@@ -288,11 +288,11 @@ INSERT INTO bien_ban_gui VALUE (110,'2017-5-11',2,15,1);
 
 
 INSERT INTO bien_ban_nhan VALUE (100,'2018-1-23',2,3,20,1);
-INSERT INTO bien_ban_nhan VALUE (101,'2018-1-25',1,0,15,2);
-INSERT INTO bien_ban_nhan VALUE (102,'2018-2-5',2,6,30,1);
-INSERT INTO bien_ban_nhan VALUE (103,'2018-3-14',2,8,20,3);
+INSERT INTO bien_ban_nhan VALUE (101,'2018-1-25',1,0,15,5);
+INSERT INTO bien_ban_nhan VALUE (102,'2018-2-5',2,6,30,2);
+INSERT INTO bien_ban_nhan VALUE (103,'2018-3-14',2,8,20,4);
 INSERT INTO bien_ban_nhan VALUE (104,'2018-6-8',1,0,40,1);
-INSERT INTO bien_ban_nhan VALUE (105,'2018-8-16',2,5,24,1);
+INSERT INTO bien_ban_nhan VALUE (105,'2018-8-16',2,5,24,2);
 INSERT INTO bien_ban_nhan VALUE (106,'2018-9-1',3,5,24,4);
 INSERT INTO bien_ban_nhan VALUE (107,'2018-9-4',6,5,24,5);
 INSERT INTO bien_ban_nhan VALUE (108,'2018-9-17',5,3,20,5);
@@ -301,7 +301,7 @@ INSERT INTO kien_hang VALUE (1,10,"Q1, TP HCM","Xuan Loc, Dong Nai","Do choi",10
 INSERT INTO kien_hang VALUE (2,5,"Q2, TP HCM","Xuan Loc, Dong Nai","Do choi",10,100);
 INSERT INTO kien_hang VALUE (3,20,"Xuan Loc, Dong Nai","Q1, TP HCM","Noi that",5,101);
 INSERT INTO kien_hang VALUE (4,4,"Q1, TP HCM", "Xuan Loc, Dong Nai","Do choi",5,102);
-INSERT INTO kien_hang VALUE (5,10,"Chau Doc, An Giang","Q2, TP HCM","Quan ao",5,103);
+INSERT INTO kien_hang VALUE (5,10,"Chau Doc, An Giang","Q2, TP HCM","Quan ao",5,102);
 INSERT INTO kien_hang VALUE (6,15,"Chau Doc, An Giang","Q2, TP HCM","Quan ao",15,103);
 INSERT INTO kien_hang VALUE (7,20,"Chau Doc, An Giang","Q2, TP HCM","Quan ao",15,103);
 INSERT INTO kien_hang VALUE (8,10,"Xuan Loc Dong Nai","Nha Trang Khanh Hoa","Sach",10,104);
@@ -322,8 +322,8 @@ INSERT INTO kien_hang VALUE (22,12,"Xuan Loc Dong Nai","Q2, TP HCM","Dung cu",5,
 INSERT INTO kien_hang VALUE (23,11,"Q1, TP HCM","Xuan Loc, Dong Nai","Do choi",5,110);
 INSERT INTO kien_hang VALUE (24,13,"Q1, TP HCM","Xuan Loc, Dong Nai","Do choi",5,110);
 
-INSERT INTO nhan_hang VALUE (1,100);
-INSERT INTO nhan_hang VALUE (2,100);
+INSERT INTO nhan_hang VALUE (21,100);
+INSERT INTO nhan_hang VALUE (22,100);
 INSERT INTO nhan_hang VALUE (3,101);
 INSERT INTO nhan_hang VALUE (4,102);
 INSERT INTO nhan_hang VALUE (5,102);
@@ -342,8 +342,8 @@ INSERT INTO nhan_hang VALUE (17,107);
 INSERT INTO nhan_hang VALUE (18,107);
 INSERT INTO nhan_hang VALUE (19,107);
 INSERT INTO nhan_hang VALUE (20,108);
-INSERT INTO nhan_hang VALUE (21,108);
-INSERT INTO nhan_hang VALUE (22,108);
+INSERT INTO nhan_hang VALUE (1,108);
+INSERT INTO nhan_hang VALUE (2,108);
 INSERT INTO nhan_hang VALUE (23,108);
 INSERT INTO nhan_hang VALUE (24,108);
 
