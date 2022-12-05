@@ -16,7 +16,7 @@ CREATE PROCEDURE getDate(
     Ngay_gui_n DATE
 )
 BEGIN
-	SELECT b.Ma_KH AS ma_kh_nhan, b.ten_nguoi_gui,b.ma_bien_ban_gui, b.Ngay_gui, bien_ban_nhan.ma_kh_nhan,khach_hang.Ten AS kh_nhan,bien_ban_nhan.Ma_bien_ban AS Ma_bien_ban_nhan,bien_ban_nhan.Ngay_nhan
+	SELECT b.Ma_KH AS ma_kh_gui, b.ten_nguoi_gui ,b.ma_bien_ban_gui, b.Ngay_gui, bien_ban_nhan.ma_kh_nhan, khach_hang.Ten AS ten_nguoi_nhan, bien_ban_nhan.Ma_bien_ban AS ma_bien_ban_nhan, bien_ban_nhan.Ngay_nhan
 	FROM ((bien_ban_nhan
 	INNER JOIN 
 		(SELECT a.Ma_KH, a.ten_nguoi_gui, a.Ngay_gui, kien_hang.Noi_den,kien_hang.ma_bien_ban_gui, nhan_hang.Ma_bien_ban_nhan
