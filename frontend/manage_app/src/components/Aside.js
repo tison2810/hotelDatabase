@@ -106,6 +106,29 @@ const Aside = () => {
                                 <img src={require('../image/avatar.jpg')} alt='admin'/>
                             </div>
                         </div>  
+                        <div>
+                            <p><b>Quyen Nguyen</b> has update Product with quantity 2</p>
+                            <p>Updated 1 weeks ago</p>
+                        </div>
+                        <div className={styles.update}>
+                            <div className={styles.profile_photo}>
+                                <img src={require('../image/avatar.jpg')} alt='admin'/>
+                            </div>
+                        </div>  
+                        <div>
+                            <p><b>Khoa Anh</b> has update WareHouse with quantity 1</p>
+                            <p>Updated 2 weeks ago</p>
+
+                        </div>
+                        <div className={styles.update}>
+                            <div className={styles.profile_photo}>
+                                <img src={require('../image/avatar.jpg')} alt='admin'/>
+                            </div>
+                        </div>  
+                        <div>
+                            <p><b>Dung Quoc</b> has delete Employe with quantity 3</p>
+                            <p>Updated 1 weeks ago</p> 
+                        </div>
                     </div>
                 </div>
             </div>
