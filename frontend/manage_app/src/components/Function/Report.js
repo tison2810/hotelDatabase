@@ -7,17 +7,33 @@ const Report = () => {
     const [listReport, SetReport] = useState([]);
     const [insertRe, SetInsertRe] = useState(false);
     const [deleteRe, SetDeleteRe] = useState(false);
+    const [filter, SetFilter] = useState(false);
 
     function InsertReport() {
-
+        if (insertRe === false) {
+            SetInsertRe(true)
+        }
+        else {
+            SetInsertRe(false)
+        }
     }
 
     function DeleteReport() {
-        
+        if (deleteRe === false) {
+            SetDeleteRe(true)
+        }
+        else {
+            SetDeleteRe(false)
+        }
     }
 
     function FilterReport() {
-
+        if (filter === false) {
+            SetFilter(true)
+        }
+        else {
+            SetFilter(false)
+        }
     }
 
     useEffect(() => {
@@ -74,10 +90,18 @@ const Report = () => {
                 
             </main>
             <div className={styles.button_container}>
-                <button className={styles.button}>Add Report</button>
-                <button className={styles.button}>Delete Report</button>
-                <button className={styles.button}>Search Report</button>
+                <button onClick={InsertReport} className={styles.button}>Add Report</button>
+                <button onClick={DeleteReport} className={styles.button}>Delete Report</button>
+                <button onClick={FilterReport} className={styles.button}>Search Report</button>
             </div>
+            
+            {(insertRe && !deleteRe && !filter) && <h1>H1</h1>
+            } 
+            {(!insertRe && deleteRe && !filter) && <h1>H2</h1>
+            } 
+            {(!insertRe && !deleteRe && filter) && <h1>H3</h1>
+            } 
+        
         </div>
     )
 }
