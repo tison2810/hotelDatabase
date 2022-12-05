@@ -5,13 +5,20 @@ import { MdDashboard,MdProductionQuantityLimits } from "react-icons/md"
 import { BsFillPersonFill } from "react-icons/bs"
 import { FiUsers } from "react-icons/fi"
 import { FaWarehouse } from "react-icons/fa"
-import { GrFormAdd } from "react-icons/gr"
 import { CiLogout } from "react-icons/ci"
 import {FaFileWord} from "react-icons/fa"
 import DashBoard from "./Function/DashBoard";
+import { BrowserRouter,Routes, Route, Link } from 'react-router-dom'
+import Home from "./Home/Home";
+import Customer from "../components/Function/Customer"
+import Employee from "../components/Function/Employee"
+import Product from "../components/Function/Product"
+import Report from "../components/Function/Report"
+import WareHouse from "../components/Function/Warehouse"
 
 const Aside = () => {
     return (
+        
         <div className={styles.container}>
             <aside>
                 <div className={styles.top}>
@@ -23,48 +30,42 @@ const Aside = () => {
                     </div>
                 </div>
                 <div className={styles.sidebar}>
-                    <a href="#">
+                    <Link to="/">
                         <span>
                             <MdDashboard />
                         </span>
                         <h3>DashBoard</h3>
-                    </a>   
-                    <a href="#" className={styles.active}>
+                    </Link>   
+                    <Link to="/customer" className={styles.active}>
                         <span>
                             <FiUsers />
                         </span>
                         <h3>Customer</h3>
-                    </a>   
-                    <a href="#">
+                    </Link>   
+                    <Link to="/report">
                         <span>
                             <FaFileWord />
                         </span>
                         <h3>Report</h3>
-                    </a>   
-                    <a href="#">
+                    </Link>   
+                    <Link to='/product'>
                         <span>
                             <MdProductionQuantityLimits />
                         </span>
                         <h3>Products</h3>
-                    </a>   
-                    <a href="#">
+                    </Link>   
+                    <Link to='/employees'>
                         <span>
                             <BsFillPersonFill />
                         </span>
                         <h3>Employees</h3>
-                    </a>   
-                     <a href="#">
+                    </Link>   
+                     <Link to='/warehouse'>
                         <span>
                             <FaWarehouse />
                         </span>
                         <h3>WareHouse</h3>
-                    </a>
-                    <a href="#">
-                        <span>
-                            <GrFormAdd />
-                        </span>
-                        <h3>Add product</h3>
-                    </a>
+                    </Link>
                     <a href="#">
                         <span>
                             <CiLogout />
@@ -74,9 +75,17 @@ const Aside = () => {
                     
                 </div>
                 
+                
             </aside>
-            <DashBoard />
-        </div>
+            <Routes>
+                    <Route path="/" element={<DashBoard/>} />
+                    <Route path="/customer" element={<Customer/>} />
+                    <Route path="/report" element={<Report/>} />
+                    <Route path="/product" element={<Product/>} />
+                    <Route path="/employees" element={<Employee />} />
+                    <Route path="/warehouse" element={<WareHouse/>} />
+                </Routes>
+            </div>
     )
 }
 export default Aside 
