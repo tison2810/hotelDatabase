@@ -5,8 +5,10 @@
 h1 {
     font-size: 1.87rem;
 }
-main {
+.container  main {
     margin-top: 1.2 rem;
+    height: 700px;
+    overflow: auto; 
 }
 .note {
     color: #7a7676;
@@ -15,11 +17,12 @@ main {
 table{
     background: white;
     width: 100%;
-    border-radius:30px;
     padding: 30px 20px;
     text-align: center;
-    transition: ease 200ms all;    
-
+    transition: ease 200ms all;   
+    border-left: #3ccf5c solid 2px;
+    border-right: #3ccf5c solid 2px;
+    
 }
 tbody td{
     height: 2.8rem;
