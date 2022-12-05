@@ -17,8 +17,11 @@ exports.addReports = (req, res, next) => {
     const manager_id = req.body.manager_id;
     const warehouse_code = req.body.warehouse_code;
     const transport_code = req.body.transport_code;
-    const report = new Product(id, ngayxuat, tinhtrang, manager_id, warehouse_code, transport_code);
-    report
-        .save()
-        .catch(err=> console.log(err))
+    let sql = Report.Save();
+    db.execute(sql, [id, ngayxuat, tinhtrang, manager_id, warehouse_code, transport_code]);
+}
+exports.deleteReport = (req, res, next) => {
+    const id = req.body.id;
+    let sql = Report.deleteById();
+    db.execute(sql, [id]);
 }

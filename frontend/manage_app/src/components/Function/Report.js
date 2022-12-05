@@ -1,6 +1,9 @@
 import React from "react";
 import { useEffect, useState } from "react";
 import styles from "../../css/Part.module.css"
+import InsertForm from "./ReportFunction/Insertreport";
+import DeleteForm from "./ReportFunction/DeleteReport";
+
 
 
 const Report = () => {
@@ -12,26 +15,38 @@ const Report = () => {
     function InsertReport() {
         if (insertRe === false) {
             SetInsertRe(true)
+            SetDeleteRe(false)
+            SetFilter(false)
         }
         else {
             SetInsertRe(false)
+            SetDeleteRe(false)
+            SetFilter(false)
         }
     }
 
     function DeleteReport() {
         if (deleteRe === false) {
             SetDeleteRe(true)
+            SetFilter(false)
+            SetInsertRe(false)
         }
         else {
+            SetInsertRe(false)
             SetDeleteRe(false)
+            SetFilter(false)
         }
     }
 
     function FilterReport() {
         if (filter === false) {
             SetFilter(true)
+            SetInsertRe(false)
+            SetDeleteRe(false)
         }
         else {
+            SetInsertRe(false)
+            SetDeleteRe(false)
             SetFilter(false)
         }
     }
@@ -95,9 +110,9 @@ const Report = () => {
                 <button onClick={FilterReport} className={styles.button}>Search Report</button>
             </div>
             
-            {(insertRe && !deleteRe && !filter) && <h1>H1</h1>
+            {(insertRe && !deleteRe && !filter) && <InsertForm/>
             } 
-            {(!insertRe && deleteRe && !filter) && <h1>H2</h1>
+            {(!insertRe && deleteRe && !filter) && <DeleteForm/>
             } 
             {(!insertRe && !deleteRe && filter) && <h1>H3</h1>
             } 

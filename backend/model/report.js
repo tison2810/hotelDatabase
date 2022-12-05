@@ -10,18 +10,17 @@ module.exports = class Report {
         this.transport_code = transport_code;
        
     }
-    static save() {
-        return db.execute(
-            'INSERT INTO bien_ban_xuat_nhap (ID, Ngay_xuat_bien_ban, Tinh_trang, ma_nv_quan_ly_kho, ma_kho, ma_chuyen) VALUES (?, ?, ?, ?, ?, ?)',
-            [this.id, this.ngayxuat, this.tinhtrang, this.manager_id, this.warehouse_code, this.transport_code]
-        );
+    static Save() {
+        const sql = 'INSERT INTO bien_ban_xuat_nhap (ID, Ngay_xuat_bien_ban, Tinh_trang, ma_nv_quan_ly_kho, ma_kho, ma_chuyen) VALUES (?, ?, ?, ?, ?, ?)';
+        return sql;
     }
     static fetchAll() {
         const rows = 'SELECT * FROM bien_ban_xuat_nhap';    
         return rows;
         
     }
-    static deleteById(id) {
-        return db.execute('SELECT * FROM bien_ban_xuat_nhap WHERE bien_ban_xuat_nhap.ID = ?', [id]);
+    static deleteById() {
+        const sql = 'DELETE FROM bien_ban_xuat_nhap WHERE bien_ban_xuat_nhap.ID = ?'
+        return sql;
     }
 }
