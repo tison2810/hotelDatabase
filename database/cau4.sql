@@ -19,4 +19,39 @@ BEGIN
 	
     RETURN so_lan_gui;
 END $$
+
+CREATE FUNCTION getRole(ma_NV_inp INT)
+RETURNS VARCHAR(45)
+DETERMINISTIC
+BEGIN
+	DECLARE checkNV INT DEFAULT 0;
+	SELECT COUNT(*) INTO checkNV FROM nguoi_dieu_hanh WHERE ma_NV=ma_NV_inp;
+    IF checkNV>0 THEN RETURN  CONCAT("NGƯỜI ĐIỀU HÀNH");
+    END IF;
+    
+    
+    SELECT COUNT(ma_NV) INTO checkNV FROM tai_xe_noi_thanh WHERE ma_NV=ma_NV_inp;
+    IF checkNV>0 THEN RETURN  CONCAT("TÀI XẾ NỘI THÀNH");
+    END IF;
+    
+   
+    SELECT COUNT(ma_NV) INTO checkNV FROM lo_xe_noi_thanh WHERE ma_NV=ma_NV_inp;
+    IF checkNV>0 THEN RETURN  CONCAT("LƠ XE NỘI THÀNH");
+    END IF;
+    
+    
+    SELECT COUNT(ma_NV) INTO checkNV FROM quan_ly_kho WHERE ma_NV=ma_NV_inp;
+    IF checkNV>0 THEN RETURN  CONCAT("QUẢN LÝ KHO");
+    END IF;
+    
+    SELECT COUNT(ma_NV) INTO checkNV FROM tai_xe_lien_tinh WHERE ma_NV=ma_NV_inp;
+    IF checkNV>0 THEN RETURN  CONCAT("TÀI XẾ LIÊN TỈNH");
+    END IF;
+    
+    SELECT COUNT(ma_NV) INTO checkNV FROM lo_xe_lien_tinh WHERE ma_NV=ma_NV_inp;
+    IF checkNV>0 THEN RETURN  CONCAT("LƠ XE LIÊN TỈNH");
+    END IF;
+    RETURN CONCAT("NOT FOUND");
+END $$
+
 DELIMITER ;
