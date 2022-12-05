@@ -7,7 +7,7 @@ returns VARCHAR(45)
      DETERMINISTIC
 BEGIN
 	update yeu_cau set trang_thai=trang_thai where Ma_so=Ma_so_yeu_cau;
-    RETURN 	CONCAT(ma_so_yeu_cau);
+    RETURN 	CONCAT("Đã update");
 END  $$
 CREATE FUNCTION getCountBefore(ma_kh INT,ngay DATE)
 RETURNS INT
