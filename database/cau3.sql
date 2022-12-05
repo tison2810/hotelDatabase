@@ -11,7 +11,7 @@ BEGIN
         HAVING khach_hang.Ma_KH = Ma_KH_n;
 END //
 
-CREATE PROCEDURE getAdrress(
+CREATE PROCEDURE getDate(
 	Ma_KH_n INT,
     Ngay_gui_n DATE
 )
