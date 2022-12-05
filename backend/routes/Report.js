@@ -9,4 +9,6 @@ router.post('/report/post', reportControler.addReports);
 
 router.post('/report/delete', reportControler.deleteReport);
 
+router.post('/report/filter', reportControler.deleteReport);
+
 module.exports = router;

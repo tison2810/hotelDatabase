@@ -25,3 +25,14 @@ exports.deleteReport = (req, res, next) => {
     let sql = Report.deleteById();
     db.execute(sql, [id]);
 }
+exports.findReportbyId = (req, res, next) => {
+    const id = req.body.id;
+    let sql = Report.filterById();
+    db.execute(sql, [id], (err, result) => {
+            if (err) console.log(err);
+            else {
+                res.json(result);
+            }
+        }
+    );
+}

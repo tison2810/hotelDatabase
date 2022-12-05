@@ -17,10 +17,13 @@ module.exports = class Report {
     static fetchAll() {
         const rows = 'SELECT * FROM bien_ban_xuat_nhap';    
         return rows;
-        
     }
     static deleteById() {
         const sql = 'DELETE FROM bien_ban_xuat_nhap WHERE bien_ban_xuat_nhap.ID = ?'
+        return sql;
+    }
+    static filterById() {
+        const sql = 'SELECT * FROM bien_ban_xuat_nhap WHERE bien_ban_xuat_nhap.ID = ?'
         return sql;
     }
 }
