@@ -104,7 +104,7 @@ const Aside = () => {
                     <div className={styles.updates}>
                         <div className={styles.update}>
                             <div className={styles.profile_photo}>
-                                <img src={require('../image/avatar.jpg')} alt='admin'/>
+                                <img src={require('../image/quyen.jpg')} alt='admin'/>
                             </div>
                              <div>
                                 <p><b>Quyen Nguyen</b> has update Product with quantity 2</p>

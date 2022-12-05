@@ -33,3 +33,24 @@ tbody td{
 tbody .last_child tr td{
     border: none;
 }
+.button_container{
+    margin-top: 2rem;
+    width: 100%;
+    display: flex;
+    justify-content: end;
+}
+.button{
+    width: 120px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-left: 10px ;
+    color: white;
+    background-color: #3ccf5c;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: bold;
+}
+.button:hover{
+    background-color: #5deb7c;
+    cursor: pointer; 
+}

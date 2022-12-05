@@ -4,7 +4,21 @@ import styles from "../../css/Part.module.css"
 
 
 const Report = () => {
-    const [listReport, SetReport] = useState([])
+    const [listReport, SetReport] = useState([]);
+    const [insertRe, SetInsertRe] = useState(false);
+    const [deleteRe, SetDeleteRe] = useState(false);
+
+    function InsertReport() {
+
+    }
+
+    function DeleteReport() {
+        
+    }
+
+    function FilterReport() {
+
+    }
 
     useEffect(() => {
         fetch("http://localhost:8080/report/get")
@@ -57,7 +71,13 @@ const Report = () => {
                 })}
 
                 </table>
+                
             </main>
+            <div className={styles.button_container}>
+                <button className={styles.button}>Add Report</button>
+                <button className={styles.button}>Delete Report</button>
+                <button className={styles.button}>Search Report</button>
+            </div>
         </div>
     )
 }

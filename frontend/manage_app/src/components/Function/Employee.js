@@ -51,7 +51,6 @@ const Employee = () => {
                         </tbody>
                     )
                 })}
-
                 </table>
             </main>
         </div>
