@@ -9,7 +9,6 @@ import { CiLogout } from "react-icons/ci"
 import {FaFileWord} from "react-icons/fa"
 import DashBoard from "./Function/DashBoard";
 import { BrowserRouter,Routes, Route, Link } from 'react-router-dom'
-import Home from "./Home/Home";
 import Customer from "../components/Function/Customer"
 import Employee from "../components/Function/Employee"
 import Product from "../components/Function/Product"
