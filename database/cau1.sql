@@ -210,7 +210,7 @@ BEGIN
 			SET MESSAGE_TEXT = 'Số điện thoại input không tồn tại';
     END IF;
     
-     IF LENGTH(STD_update) != 10 THEN 
+     IF LENGTH(SDT_update) != 10 THEN 
 		SIGNAL SQLSTATE '45000' 
 			SET MESSAGE_TEXT = 'Số điện thoại update đã nhập phải có 10 ký tự';
     END IF;
@@ -221,7 +221,7 @@ BEGIN
     END IF;
     
     UPDATE So_dien_thoai
-    SET So_dien_thoai = STD_update
+    SET So_dien_thoai = SDT_update
     WHERE So_dien_thoai = SDT_input;
 END //
 
