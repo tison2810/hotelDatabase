@@ -55,4 +55,3 @@ BEGIN
 END $$
 
 DELIMITER ;
-select getRole(14);
