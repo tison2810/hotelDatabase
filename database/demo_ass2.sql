@@ -1,4 +1,3 @@
--- DROP SCHEMA xxx;
 CREATE SCHEMA transportation;
 
 USE transportation;
