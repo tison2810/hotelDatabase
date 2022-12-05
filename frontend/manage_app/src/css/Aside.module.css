@@ -93,3 +93,27 @@ aside .sidebar a:hover span{
     color: rgb(10, 116, 10);
     margin: 1rem;
 }
+
+.right{
+    margin-top:1.4rem
+}
+.right .top{
+    display: flex;
+    justify-content: end;
+    gap: 2rem;
+}
+.right .top .profiles{
+    display: flex;
+    gap: 1.5rem;
+    text-align: right;
+}
+.right .top .profiles .profile_photo img{
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+}
+.updates img{
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+}

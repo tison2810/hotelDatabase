@@ -89,9 +89,23 @@ const Aside = () => {
                 <div className={styles.top}>
                     <div className={styles.profiles}>
                         <div class="info">
-                            <p>Welcome back, <b></b> </p>
+                            <p>Welcome back, <b>Quang Huy</b> </p>
+                            <small>Admin</small>
                         </div>
+                        <div className={styles.profile_photo}>
+                            <img src={require('../image/avatar.jpg')} alt='admin'/>
+                        </div>
+                    </div>
+                </div>
 
+                <div>
+                    <h2>Recent Updates</h2>
+                    <div className={styles.updates}>
+                        <div className={styles.update}>
+                            <div className={styles.profile_photo}>
+                                <img src={require('../image/avatar.jpg')} alt='admin'/>
+                            </div>
+                        </div>  
                     </div>
                 </div>
             </div>
