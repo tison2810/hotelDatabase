@@ -1,4 +1,4 @@
-USE xxx;
+USE transportation;
 DELIMITER //
 CREATE PROCEDURE getRevenue(
 	Ma_KH_n INT
