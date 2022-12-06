@@ -18,8 +18,16 @@ exports.addReports = (req, res, next) => {
     const warehouse_code = req.body.warehouse_code;
     const transport_code = req.body.transport_code;
     let sql = Report.Save();
-    db.execute(sql, [id, ngayxuat, tinhtrang, manager_id, warehouse_code, transport_code]);
-    res.send('Success, Back to Your App');
+    db.execute(sql, [id, ngayxuat, tinhtrang, manager_id, warehouse_code, transport_code], (err, result) => {
+        if (err) {
+            res.send('Fail to add Report');
+        }
+        else {
+            res.send('Success, Back to Your App');
+        }
+    });
+
+    
 }
 exports.deleteReport = (req, res, next) => {
     const id = req.body.id;
@@ -28,8 +36,15 @@ exports.deleteReport = (req, res, next) => {
         return;
     }
     let sql = Report.deleteById();
-    db.execute(sql, [id]);
-    res.send('Success, Back to Your App');
+    db.execute(sql, [id], (err, result) => {
+        if (err) {
+            res.send('Fail to add Report');
+        }
+        else {
+            res.send('Success, Back to Your App');
+        }
+    }
+    );
 }
 exports.findReportbyId = (req, res, next) => {
     let id = req.query.id;
