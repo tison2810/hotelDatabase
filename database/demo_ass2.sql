@@ -1,7 +1,6 @@
-DROP SCHEMA xxx;
-CREATE SCHEMA xxx;
+CREATE SCHEMA transportation;
 
-USE xxx;
+USE transportation;
 
 CREATE TABLE Khach_hang(
 	Ma_KH INT NOT NULL,
@@ -235,16 +234,16 @@ INSERT INTO khach_hang VALUE (5,587752351,"Kenneth A Mendez","alvera_padbe@gmail
 INSERT INTO khach_hang VALUE (6,546786132,"Deborah J Paul","newell.low8@gmail.com");
 
 
-INSERT INTO so_dien_thoai VALUE (1,7064049336);
-INSERT INTO so_dien_thoai VALUE (1,7625832514);
-INSERT INTO so_dien_thoai VALUE (2,9525569734);
-INSERT INTO so_dien_thoai VALUE (2,6512101985);
-INSERT INTO so_dien_thoai VALUE (3,3025951884);
-INSERT INTO so_dien_thoai VALUE (4,3026903693);
-INSERT INTO so_dien_thoai VALUE (5,3105980521);
-INSERT INTO so_dien_thoai VALUE (5,4247047254);
-INSERT INTO so_dien_thoai VALUE (6,8705321913);
-INSERT INTO so_dien_thoai VALUE (6,8708248917);
+INSERT INTO so_dien_thoai VALUE (1,'0706404933');
+INSERT INTO so_dien_thoai VALUE (1,'0625832514');
+INSERT INTO so_dien_thoai VALUE (2,'0525569734');
+INSERT INTO so_dien_thoai VALUE (2,'0512101985');
+INSERT INTO so_dien_thoai VALUE (3,'0225951884');
+INSERT INTO so_dien_thoai VALUE (4,'0326903693');
+INSERT INTO so_dien_thoai VALUE (5,'0305980521');
+INSERT INTO so_dien_thoai VALUE (5,'0247047254');
+INSERT INTO so_dien_thoai VALUE (6,'0705321913');
+INSERT INTO so_dien_thoai VALUE (6,'0708248917');
 
 
 INSERT INTO dia_chi VALUE (1,"1378 Davis Street Columbus Georgia(GA)");

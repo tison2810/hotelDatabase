@@ -1,4 +1,4 @@
-USE xxx;
+USE transportation;
 
 DELIMITER $$
 
@@ -28,13 +28,14 @@ END$$
 
 
 
-CREATE TABLE kien_hang_delete (
+CREATE TABLE kien_hang_delete_Archives (
 	ID INT AUTO_INCREMENT,
     Khoi_luong INT,
     Noi_den VARCHAR(200),
     Noi_di VARCHAR(200),
     Loai VARCHAR(45),
     Phi_lien_tinh DECIMAL(10,2),
+    deletedAt TIMESTAMP DEFAULT NOW(),
     PRIMARY KEY (ID)
 );
 
@@ -74,6 +75,9 @@ BEGIN
 	UPDATE chuyen_xe_lien_tinh 
 	SET So_kien_hang = So_kien_hang - 1
 	WHERE Ma_chuyen IN (SELECT Ma_chuyen FROM cho WHERE ID_kien_hang = OLD.ID);
+    
+    INSERT INTO kien_hang_delete_Archives (Khoi_luong, Noi_den, Noi_di, Loai, Phi_lien_tinh) 
+    VALUE (OLD.Khoi_luong, OLD.Noi_den, LD.Noi_di, OLD.Loai, OLD.Phi_lien_tinh);
 END$$    
 
 
