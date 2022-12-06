@@ -22,7 +22,8 @@ module.exports = class Product {
         return rows;
         
     }
-    static deleteById(id) {
-        return db.execute('SELECT * FROM kien_hang WHERE kien_hang.ID = ?', [id]);
+    static filterById() {
+        const sql = 'SELECT * FROM kien_hang WHERE kien_hang.ma_bien_ban_gui = '
+        return sql;
     }
 }

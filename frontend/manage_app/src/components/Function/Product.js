@@ -1,12 +1,23 @@
 import React from "react";
 import { useEffect, useState } from "react";
 import styles from "../../css/Part.module.css"
+import FilterByType from "./ProductFunc/FilterByType";
 
 
 
 const Product = () => {
     const [listProduct, SetListProduct] = useState([])
+    const [filter,SetFilter] = useState(false)
 
+
+    function Filter() {
+        if (filter === false) {
+            SetFilter(true);
+        }
+        else {
+            SetFilter(false);
+        }
+    }
     useEffect(() => {
         fetch("http://localhost:8080/product/get")
             .then(res => {
@@ -61,6 +72,10 @@ const Product = () => {
 
                 </table>
             </main>
+            <div className={styles.button_container}>
+                <button onClick={Filter} className={styles.button}>Filter Product</button>
+            </div>
+            {filter && <FilterByType/>}
         </div>
     )
 }
