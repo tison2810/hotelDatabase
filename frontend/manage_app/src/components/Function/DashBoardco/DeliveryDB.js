@@ -26,7 +26,7 @@ const DeliveryDB = () => {
                 </tbody>
                 <tbody>
                     <tr>
-                        <td>2012360</td>
+                        <td>2014311</td>
                         <td>Tuan Quyen</td>
                         <td>Male</td>
                         <td>0917988527</td>

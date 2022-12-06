@@ -49,7 +49,7 @@ exports.deleteReport = (req, res, next) => {
 exports.findReportbyId = (req, res, next) => {
     let id = req.query.id;
     if (!id || isNaN(id)) {
-        res.send('parameter error');
+        res.send('parameter error');    
         return;
     }
     let sql = Report.filterById() + String(id);
