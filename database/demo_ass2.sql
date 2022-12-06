@@ -275,7 +275,7 @@ INSERT INTO nguoi_nhan VALUE (6);
 
 INSERT INTO bien_ban_gui VALUE (100,"2015-3-14",2,3,1);
 INSERT INTO bien_ban_gui VALUE (101,'2016-2-14',1,0,2);
-INSERT INTO bien_ban_gui VALUE (102,'2016-3-17',1,5,1);
+INSERT INTO bien_ban_gui VALUE (102,'2016-3-17',2,5,1);
 INSERT INTO bien_ban_gui VALUE (103,'2016-7-1',3,8,3);
 INSERT INTO bien_ban_gui VALUE (104,'2016-11-15',2,0,4);
 INSERT INTO bien_ban_gui VALUE (105,'2017-1-13',1,0,3);
