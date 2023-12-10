@@ -1,0 +1,56 @@
+.container{
+    margin-top: 1.4rem;
+
+}
+h1 {
+    font-size: 1.87rem;
+}
+.container  main {
+    margin-top: 1.2 rem;
+    height: 700px;
+    overflow: auto; 
+}
+.note {
+    color: #7a7676;
+    font-size: 16px;
+}
+table{
+    background: white;
+    width: 100%;
+    padding: 30px 20px;
+    text-align: center;
+    transition: ease 200ms all;   
+    border-left: #3ccf5c solid 2px;
+    border-right: #3ccf5c solid 2px;
+    
+}
+tbody td{
+    height: 2.8rem;
+    border-bottom: 1px solid #3ccf5c;
+    color: rgb(6, 95, 6);
+    font-weight: 500;
+}
+tbody .last_child tr td{
+    border: none;
+}
+.button_container{
+    margin-top: 2rem;
+    width: 100%;
+    display: flex;
+    justify-content: end;
+}
+.button{
+    width: 120px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-left: 10px ;
+    color: white;
+    background-color: #3ccf5c;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: bold;
+}
+.button:hover{
+    background-color: #5deb7c;
+    cursor: pointer; 
+}

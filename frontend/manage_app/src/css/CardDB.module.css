@@ -1,0 +1,66 @@
+small {
+    font-size: 0.87rem;
+    color: rgb(149, 152, 155);
+}
+div .sales{
+    background-color: white;
+    padding: 20px;
+    border-radius: 40px ;
+    margin-top: 1rem;
+    transition: all 200ms ease;
+}
+div .sales .logo{
+    background-color: rgb(59, 226, 53);
+    display: flex;
+    justify-content: center;
+    padding: 0.5rem; 
+    margin-top: 0.5rem;
+    margin-bottom:0.5rem;
+    border-radius: 50%;
+    width: fit-content;
+    height: fit-content;
+    color: white;
+    font-size: 1rem;
+    position: relative; 
+}   
+div .sales .middle{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.insights h3{
+    margin: 1rem 0 0.6rem;
+    font-size: 1rem;
+    font-weight: bold;
+}
+.insights .progress{
+    position: relative;
+    width: 92px;
+    height: 92px;
+    border-radius: 50% ;
+}
+.progress svg{
+    width: 7rem;
+    height: 7rem;
+}
+.progress svg circle{
+    fill:none;
+    stroke: #77cf24;
+    stroke-width: 14;
+    stroke-linecap: round;
+    transform: translate(5px, 5px);
+}
+.progress .number{
+    position: relative;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.progress .number p{
+    font-weight: bold;
+    color: #9ea09a;
+}

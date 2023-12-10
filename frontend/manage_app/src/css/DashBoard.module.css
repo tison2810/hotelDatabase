@@ -1,0 +1,27 @@
+h1 {
+    font-size: 1.87rem;
+}
+main {
+    margin-top: 1.4rem;
+}
+main .date{
+    display: inline-block;
+    background-color: #2bca25 ;
+    margin-top: 1rem;
+    padding: 0.5rem 1.6rem;
+    border-radius: 20px;
+}
+main .date input[type='date']{
+    background: transparent;
+    color: #ffffff
+}
+.insights {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.6rem;
+}
+.card {
+    width: fit-content;
+    height: fit-content;
+    box-shadow: 2px;
+}
