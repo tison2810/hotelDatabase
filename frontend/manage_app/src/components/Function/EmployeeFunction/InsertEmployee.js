@@ -9,6 +9,10 @@ const InsertForm = () => {
                 <input type="number" name="CCCD" id="title" />
             </div>
             <div className={styles.form_control}>
+                <label for="CCCD_Mgr">Manger ID:</label>
+                <input type="number" name="CCCD_Mgr" id="title" />
+            </div>
+            <div className={styles.form_control}>
                 <label for="HoTen">Name:</label>
                 <input type="text" name="HoTen" id="price" step="0.01" />
             </div>
@@ -28,6 +32,28 @@ const InsertForm = () => {
                 <label for="Email">Email:</label>
                 <input type="text" name="Email" id="price" step="0.01" />
             </div>  
+            <div className={styles.form_control}>
+                <label for="Diachi">Address:</label>
+                <input type="text" name="Diachi" id="price" step="0.01" />
+            </div>  
+            <div className={styles.form_control}>
+                <label for="MaCN">Apartment ID:</label>
+                <input type="text" name="MaCN" id="price" step="0.01" />
+            </div> 
+            <div className={styles.form_control}>
+                <label for="MucLuong">Get Paid:</label>
+                <input type="text" name="MucLuong" id="price" step="0.01" />
+            </div>
+            <div className={styles.form_control}>
+                <label for="ChucVu">Rank:</label>
+                <li>
+                    <select name="ChucVu">
+                        <option value="1">Manager</option>
+                        <option value="2">Reception</option>
+                        <option value="3">Servant</option>
+                    </select>
+                </li>
+            </div>
             <button className={styles.btn} type="submit"> Submit </button>
         </form>
     )
