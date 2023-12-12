@@ -1,4 +1,4 @@
-DROP SCHEMA hoteldatabase;
+-- DROP SCHEMA hoteldatabase;
 CREATE SCHEMA hoteldatabase;
 USE hoteldatabase;
 
