@@ -26,7 +26,9 @@ BEGIN
 END//
 
 CREATE FUNCTION TongDoanhThuCN(
-    MaSo_CN CHAR(4)
+    MaSo_CN CHAR(4),
+    Thang INT,
+    Nam INT
 )
 RETURNS INT
 DETERMINISTIC
@@ -37,10 +39,12 @@ BEGIN
     ELSEIF (NOT EXISTS (SELECT * FROM ChiNhanh WHERE ChiNhanh.MaSoCN = MaSo_CN)) THEN
         RETURN CAST("Chi Nhánh không tồn tại." AS SIGNED);
     ELSE
-        SET TongTien = (SELECT SUM(HoaDon.TongTien) 
-                        FROM HoaDon, LuotDatPhong
-                        WHERE HoaDon.MaSoLuotDP = LuotDatPhong.MaSo
-                                AND LuotDatPhong.MaSoCN = MaSo_CN);
+        SET TongTien = (SELECT COALESCE(SUM(HoaDon.TongTien), 0) 
+                        FROM HoaDon
+                        JOIN LuotDatPhong ON HoaDon.MaSoLuotDP = LuotDatPhong.MaSo
+                        WHERE LuotDatPhong.MaSoCN = MaSo_CN
+                              AND MONTH(ThoiGianXuatHoaDon) = Thang
+                              AND YEAR(ThoiGianXuatHoaDon) = Nam);
         RETURN TongTien;
     END IF;
 END//

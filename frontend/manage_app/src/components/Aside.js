@@ -10,6 +10,7 @@ import { FaFileWord } from "react-icons/fa"
 import {TfiAnnouncement} from "react-icons/tfi"
 import { GoListUnordered } from "react-icons/go";
 import { FaAddressCard } from "react-icons/fa";
+import { FaTicketAlt } from "react-icons/fa";
 import DashBoard from "./Function/DashBoard";
 import { BrowserRouter,Routes, Route, Link } from 'react-router-dom'
 import Customer from "../components/Function/Customer"
@@ -38,7 +39,13 @@ const Aside = () => {
                             <MdDashboard />
                         </span>
                         <h3>DashBoard</h3>
-                    </Link>   
+                    </Link>
+                    <Link to="/booking" className={styles.active}>
+                        <span>
+                            <FaTicketAlt />
+                        </span>
+                        <h3>Booking</h3>
+                    </Link>
                     <Link to="/customer" className={styles.active}>
                         <span>
                             <FiUsers />
@@ -94,6 +101,7 @@ const Aside = () => {
             </aside>
             <Routes>
                     <Route path="/" element={<DashBoard/>} />
+                    <Route path="/booking" element={<Booking/>} />
                     <Route path="/customer" element={<Customer/>} />
                     <Route path="/report" element={<Report/>} />
                     <Route path="/product" element={<Product/>} />

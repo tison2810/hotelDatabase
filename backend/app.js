@@ -5,6 +5,7 @@ const bodyParser = require('body-parser');
 
 const employeeRoute = require('./routes/Employee.js');
 const customerRoute = require('./routes/Customer.js');
+const bookingRoute = require('./routes/Booking.js');
 // const productRoute = require('./routes/Product.js');
 // const warehouseRoute = require('./routes/Warehouse.js');
 // const reportRoute = require('./routes/Report.js');
@@ -24,6 +25,7 @@ app.use((req, res, next) => {
 
 app.use(employeeRoute);
 app.use(customerRoute);
+app.use(bookingRoute);
 // app.use(productRoute);
 // app.use(warehouseRoute);
 // app.use(reportRoute);
