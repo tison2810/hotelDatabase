@@ -1,6 +1,7 @@
 import React from "react";
 import { useEffect, useState } from "react";
 import styles from "../../css/Part.module.css"
+import styles2 from "../../css/InsertForm.module.css"
 import FilterForm from "./OrderFunction/OrderSearch";
 
 const Order = () => {
@@ -39,12 +40,12 @@ const Order = () => {
             <div className={styles.note}>
                 <p><i>Last updated 24h ago</i></p>
             </div>
-            <form className={styles.container} onSubmit={handleFormSubmit}>
-                <div className={styles.form_control}>
+            <form className={styles2.container} onSubmit={handleFormSubmit}>
+                <div className={styles2.form_control}>
                     <label for="SoDienThoai">Phone:</label>
                     <input type="number" name="SoDienThoai" id="title" onChange={handlePhoneNumberChange} />
                 </div>
-                <button className={styles.btn} type="submit" > Submit </button>
+                <button className={styles.button} type="submit" > Submit </button>
             </form>
             <main>
             <table>
