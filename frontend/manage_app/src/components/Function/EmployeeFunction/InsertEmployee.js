@@ -41,7 +41,7 @@ const InsertForm = () => {
                 <input type="text" name="MaCN" id="price" step="0.01" />
             </div> 
             <div className={styles.form_control}>
-                <label for="MucLuong">Get Paid:</label>
+                <label for="MucLuong">Salary:</label>
                 <input type="text" name="MucLuong" id="price" step="0.01" />
             </div>
             <div className={styles.form_control}>

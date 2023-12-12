@@ -4,20 +4,11 @@ import styles from "../../css/Part.module.css"
 import FilterForm from "./OrderFunction/OrderSearch";
 
 const Order = () => {
-    const [listOrder, SetListOrder] = useState([])
-    const [filter, SetFilter] = useState(false);
+    const [listOrder, SetListOrder] = useState([]);
+    const [phoneNumber, setPhoneNumber] = useState('');
 
-    function FilterOrder() {
-        if (filter === false) {
-            SetFilter(true)
-        }
-        else {
-            SetFilter(false)
-        }
-    }
-
-    useEffect(() => {
-        fetch("http://localhost:8080/order/get")
+    const fetchOrderData = (phoneNumber) => {
+        fetch(`http://localhost:8080/order/get?SoDienThoai=${phoneNumber}`)
             .then(res => {
                 if (res.status !== 200) {
                     throw new Error('Failed to fetch order status.');
@@ -26,12 +17,22 @@ const Order = () => {
             })
             .then(resData => {
                 SetListOrder(resData);
+                console.log(resData);
             })
             .catch(err => {
                 console.log(err);
-            })
+            });
+    };
 
-    }, [listOrder])
+    const handleFormSubmit = (event) => {
+        event.preventDefault();
+        fetchOrderData(phoneNumber);
+    };
+
+    const handlePhoneNumberChange = (event) => {
+        setPhoneNumber(event.target.value);
+    };
+
 
     return (
        <div className={styles.container}>
@@ -39,6 +40,13 @@ const Order = () => {
             <div className={styles.note}>
                 <p><i>Last updated 24h ago</i></p>
             </div>
+            <form className={styles.container} onSubmit={handleFormSubmit}>
+                <div className={styles.form_control}>
+                    <label for="SoDienThoai">Phone:</label>
+                    <input type="number" name="SoDienThoai" id="title" onChange={handlePhoneNumberChange} />
+                </div>
+                <button className={styles.btn} type="submit" > Submit </button>
+            </form>
             <main>
             <table>
                 <thead>
@@ -61,11 +69,11 @@ const Order = () => {
                 })}
                 </table>
             </main>
-            <div className={styles.button_container}>
+            {/* <div className={styles.button_container}>
                 <button onClick={FilterOrder} className={styles.button}>Search Order</button>
             </div>
             {filter && <FilterForm/>
-            } 
+            }  */}
         </div>
     )
 }

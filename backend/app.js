@@ -7,7 +7,7 @@ const employeeRoute = require('./routes/Employee.js');
 const customerRoute = require('./routes/Customer.js');
 const orderRoute = require('./routes/Order.js');
 // const bookingRoute = require('./routes/Booking.js');
-// const productRoute = require('./routes/Product.js');
+const salaryRoute = require('./routes/Salary.js');
 // const warehouseRoute = require('./routes/Warehouse.js');
 // const reportRoute = require('./routes/Report.js');
 
@@ -28,7 +28,7 @@ app.use(employeeRoute);
 app.use(customerRoute);
 app.use(orderRoute);
 // app.use(bookingRoute);
-// app.use(productRoute);
+app.use(salaryRoute);
 // app.use(warehouseRoute);
 // app.use(reportRoute);
 

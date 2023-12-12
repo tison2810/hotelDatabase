@@ -15,7 +15,7 @@ import DashBoard from "./Function/DashBoard";
 import { BrowserRouter,Routes, Route, Link } from 'react-router-dom'
 import Customer from "../components/Function/Customer"
 import Employee from "../components/Function/Employee"
-import Product from "../components/Function/Product"
+import Salary from "../components/Function/Salary"
 import Report from "../components/Function/Report"
 import WareHouse from "../components/Function/Warehouse"
 import Account from "../components/Function/Account"
@@ -59,11 +59,11 @@ const Aside = () => {
                         </span>
                         <h3>Report</h3>
                     </Link>   
-                    <Link to='/product'>
+                    <Link to='/salary'>
                         <span>
                             <MdProductionQuantityLimits />
                         </span>
-                        <h3>Products</h3>
+                        <h3>Salary</h3>
                     </Link>   
                     <Link to='/employees'>
                         <span>
@@ -105,7 +105,7 @@ const Aside = () => {
                     <Route path="/booking" element={<Booking/>} />
                     <Route path="/customer" element={<Customer/>} />
                     <Route path="/report" element={<Report/>} />
-                    <Route path="/product" element={<Product/>} />
+                    <Route path="/salary" element={<Salary/>} />
                     <Route path="/employees" element={<Employee />} />
                     <Route path="/warehouse" element={<WareHouse/>} />
                     <Route path="/account" element={<Account/>} />
