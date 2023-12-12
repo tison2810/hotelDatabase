@@ -73,22 +73,22 @@ const Customer = () => {
             SetUpdateCus(false)
         }
     }
-    useEffect(() => {
-        fetch("http://localhost:8080/customer/get")
-            .then(res => {
-                if (res.status !== 200) {
-                    throw new Error('Failed to fetch user status.');
-                }
-                return res.json();
-            })
-            .then(resData => {
-                SetListCustomer(resData);
-            })
-            .catch(err => {
-                console.log(err);
-            })
+    // useEffect(() => {
+    //     fetch("http://localhost:8080/customer/get")
+    //         .then(res => {
+    //             if (res.status !== 200) {
+    //                 throw new Error('Failed to fetch user status.');
+    //             }
+    //             return res.json();
+    //         })
+    //         .then(resData => {
+    //             SetListCustomer(resData);
+    //         })
+    //         .catch(err => {
+    //             console.log(err);
+    //         })
 
-    }, [listCustomer])
+    // }, [listCustomer])
 
     useEffect(() => {
         fetch("http://localhost:8080/customer/filter")
