@@ -1,9 +1,14 @@
 import React from "react";
 import { useEffect, useState } from "react";
 import styles from "../../css/Part.module.css";
+import NewBooking from "./BookingNew";
 
 
 const Booking = () => {
+    const [showConfirmation, setShowConfirmation] = useState(false);
+    const handleDelete = () => {
+        setShowConfirmation(false);
+    }
 
     return (
         <div className={styles.container}>
@@ -23,7 +28,8 @@ const Booking = () => {
                             <p>Số người tối đa: 2</p>
                             <p>Mức giá: 200000</p>
                             <br></br>
-                            <button  className={styles.button}>Book</button>
+                            <button onClick={() => setShowConfirmation(true)} className={styles.button}>Book</button>
+                            {showConfirmation && <NewBooking onConfirm={handleDelete} />}
                         </div>
                     </div>
                     <div className={styles.custom_card}>
@@ -36,7 +42,8 @@ const Booking = () => {
                             <p>Số người tối đa: 4</p>
                             <p>Mức giá: 300000</p>
                             <br></br>
-                            <button  className={styles.button}>Book</button>
+                            <button onClick={() => setShowConfirmation(true)} className={styles.button}>Book</button>
+                            {showConfirmation && <NewBooking onConfirm={handleDelete} />}
                         </div>
                     </div>
                     <div className={styles.custom_card}>
@@ -49,7 +56,8 @@ const Booking = () => {
                             <p>Số người tối đa: 2</p>
                             <p>Mức giá: 600000</p>
                             <br></br>
-                            <button  className={styles.button}>Book</button>
+                            <button onClick={() => setShowConfirmation(true)} className={styles.button}>Book</button>
+                            {showConfirmation && <NewBooking onConfirm={handleDelete} />}
                         </div>
                     </div>
                     <div className={styles.custom_card}>
@@ -62,7 +70,8 @@ const Booking = () => {
                             <p>Số người tối đa: 2</p>
                             <p>Mức giá: 1000000</p>
                             <br></br>
-                            <button  className={styles.button}>Book</button>
+                            <button onClick={() => setShowConfirmation(true)} className={styles.button}>Book</button>
+                            {showConfirmation && <NewBooking onConfirm={handleDelete} />}
                         </div>
                     </div>
                 </div>
