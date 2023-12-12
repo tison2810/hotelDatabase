@@ -17,7 +17,7 @@ import Customer from "../components/Function/Customer"
 import Employee from "../components/Function/Employee"
 import Salary from "../components/Function/Salary"
 import Report from "../components/Function/Report"
-import WareHouse from "../components/Function/Warehouse"
+import Apartment from "../components/Function/Aparment"
 import Account from "../components/Function/Account"
 import Order from "../components/Function/Order"
 import Booking from "../components/Function/Booking"
@@ -71,7 +71,7 @@ const Aside = () => {
                         </span>
                         <h3>Employees</h3>
                     </Link>   
-                     <Link to='/warehouse'>
+                     <Link to='/apartment'>
                         <span>
                             <MdOutlineLocalHotel />
                         </span>
@@ -107,7 +107,7 @@ const Aside = () => {
                     <Route path="/report" element={<Report/>} />
                     <Route path="/salary" element={<Salary/>} />
                     <Route path="/employees" element={<Employee />} />
-                    <Route path="/warehouse" element={<WareHouse/>} />
+                    <Route path="/apartment" element={<Apartment/>} />
                     <Route path="/account" element={<Account/>} />
                     <Route path="/order" element={<Order/>} />
             </Routes>

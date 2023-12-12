@@ -8,7 +8,7 @@ const customerRoute = require('./routes/Customer.js');
 const orderRoute = require('./routes/Order.js');
 // const bookingRoute = require('./routes/Booking.js');
 const salaryRoute = require('./routes/Salary.js');
-// const warehouseRoute = require('./routes/Warehouse.js');
+const apartmentRoute = require('./routes/Apartment.js');
 // const reportRoute = require('./routes/Report.js');
 
 app.use(bodyParser.json());
@@ -29,7 +29,7 @@ app.use(customerRoute);
 app.use(orderRoute);
 // app.use(bookingRoute);
 app.use(salaryRoute);
-// app.use(warehouseRoute);
+app.use(apartmentRoute);
 // app.use(reportRoute);
 
 app.listen(8080, (req, res, next) => {
