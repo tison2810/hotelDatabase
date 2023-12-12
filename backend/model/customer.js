@@ -1,26 +1,32 @@
 const db = require('../util/database');
 
 module.exports = class Customer {
-    constructor(CCCD, HoTen, NgaySinh, SoDienThoai, GioiTinh, Email) {
-        this.CCCD = CCCD;
-        this.HoTen = HoTen;
-        this.NgaySinh = NgaySinh;
-        this.SoDienThoai = SoDienThoai;
-        this.GioiTinh = GioiTinh;
+    constructor(CCCD, HoTen, TenDangNhap, matkhau_KH, NgaySinh, SoDienThoai, GioiTinh, Email, Diachi) {
+        this.CCCD_KH = CCCD;
+        this.Ten_KH = HoTen;
+        this.TenDangNhap_KH = TenDangNhap;
+        this.MatKhau_KH = matkhau_KH;
+        this.NgaySinh_KH = NgaySinh;
+        this.SoDT_KH = SoDienThoai;
+        this.GioiTinh_KH = GioiTinh;
         this.Email = Email;
+        this.Diachi = Diachi;
     }
     static save() {
-        return db.execute(
-            'INSERT INTO KhachHang (CCCD, HoTen, NgaySinh, SoDienThoai, GioiTinh, Email) VALUES (?, ?, ?, ?, ?, ?)',
-            [this.CCCD, this.HoTen, this.NgaySinh, this.SoDienThoai, this.GioiTinh, this.Email]
-        );
+        const sql = 'CALL insertCustomer(?,?,?,?,?,?,?,?,?)';
+        return sql;
+    }
+    static update() {
+        const sql = 'CALL updateCustomer(?,?,?,?,?,?)';
+        return sql;
     }
     static fetchAll() {
-        const rows = 'SELECT * FROM ConNguoi';
+        const rows = 'SELECT ConNguoi.CCCD, ConNguoi.HoTen, ConNguoi.SoDienThoai, ConNguoi.GioiTinh, ConNguoi.Email FROM ConNguoi INNER JOIN KhachHang ON ConNguoi.CCCD = KhachHang.CCCD';
         return rows;
         
     }
     static deleteById(id) {
-        return db.execute('SELECT * FROM KhachHang WHERE KhachHang.CCCCD = ?', [CCCD]);
+        const sql = 'CALL deleteCustomer(?)';
+        return sql;
     }
 }

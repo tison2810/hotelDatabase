@@ -95,7 +95,7 @@ const Aside = () => {
                     <Route path="/account" element={<Account/>} />
             </Routes>
 
-            <div className={styles.right}>
+            {/* <div className={styles.right}>
                 <div className={styles.top}>
                     <div className={styles.profiles}>
                         <div class="info">
@@ -197,7 +197,7 @@ const Aside = () => {
                         <button>Add Annoucement</button>
                     </div>
                 </div>
-            </div>
+            </div> */}
         </div>
     )
 }
