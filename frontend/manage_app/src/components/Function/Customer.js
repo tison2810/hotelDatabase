@@ -83,6 +83,7 @@ const Customer = () => {
             })
             .then(resData => {
                 SetListCustomer(resData);
+                console.log(resData);
             })
             .catch(err => {
                 console.log(err);

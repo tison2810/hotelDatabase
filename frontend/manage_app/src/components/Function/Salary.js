@@ -1,23 +1,14 @@
 import React from "react";
 import { useEffect, useState } from "react";
 import styles from "../../css/Part.module.css"
-import FilterForm from "./OrderFunction/OrderSearch";
+// import FilterForm from "./SalaryFunction/SalarySearch";
 
 const Salary = () => {
-    const [listSalary, SetListSalary] = useState([])
-    const [filter, SetFilter] = useState(false);
+    const [listSalary, SetListSalary] = useState([]);
+    const [salary, setSalary] = useState('');
 
-    function FilterSalary() {
-        if (filter === false) {
-            SetFilter(true)
-        }
-        else {
-            SetFilter(false)
-        }
-    }
-
-    useEffect(() => {
-        fetch("http://localhost:8080/salary/get")
+    const fetchSalaryData = (salary) => {
+        fetch(`http://localhost:8080/salary/get?MucLuong=${salary}`)
             .then(res => {
                 if (res.status !== 200) {
                     throw new Error('Failed to fetch salary status.');
@@ -26,19 +17,35 @@ const Salary = () => {
             })
             .then(resData => {
                 SetListSalary(resData);
+                console.log(resData);
             })
             .catch(err => {
                 console.log(err);
-            })
+            });
+    }
+    const handleFormSubmit = (event) => {
+        event.preventDefault();
+        fetchSalaryData(salary);
+    };
 
-    }, [listSalary])
+    const handleSalaryChange = (event) => {
+        setSalary(event.target.value);
+    };
 
+    const salaryData = listSalary.filter(Array.isArray)[0];
     return (
        <div className={styles.container}>
             <h1>Salary</h1>
             <div className={styles.note}>
                 <p><i>Last updated 24h ago</i></p>
             </div>
+            <form className={styles.container} onSubmit={handleFormSubmit}>
+                <div className={styles.form_control}>
+                    <label for="MucLuong">Salary:</label>
+                    <input type="number" name="MucLuong" id="title" onChange={handleSalaryChange} />
+                </div>
+                <button className={styles.btn} type="submit" > Submit </button>
+            </form>
             <main>
             <table>
                 <thead>
@@ -53,24 +60,29 @@ const Salary = () => {
                         <td>Salary</td>
                     </tr>  
                 </thead>
-                {listSalary.map(salary => {
+                {salaryData && salaryData.map((salary, index) => {
                     return (
-                        <tbody>
+                        <tbody key={index}>
                             <tr>
                                 <td>{salary.CCCD}</td>
                                 <td>{salary.HoTen}</td>
+                                <td>{salary.NgaySinh}</td>
+                                <td>{salary.GioiTinh}</td>
                                 <td>{salary.SoDienThoai}</td>
+                                <td>{salary.Email}</td>
+                                <td>{salary.MaCN}</td>
+                                <td>{salary.MucLuong}</td>
                             </tr>
                         </tbody>
                     )
                 })}
                 </table>
             </main>
-            <div className={styles.button_container}>
+            {/* <div className={styles.button_container}>
                 <button onClick={FilterSalary} className={styles.button}>Search Salary</button>
             </div>
             {filter && <FilterForm/>
-            } 
+            }  */}
         </div>
     )
 }

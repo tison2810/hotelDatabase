@@ -22,8 +22,7 @@ const Order = () => {
             .catch(err => {
                 console.log(err);
             });
-    };
-
+    }
     const handleFormSubmit = (event) => {
         event.preventDefault();
         fetchOrderData(phoneNumber);
@@ -33,7 +32,7 @@ const Order = () => {
         setPhoneNumber(event.target.value);
     };
 
-
+    const ordersData = listOrder.filter(Array.isArray)[0];
     return (
        <div className={styles.container}>
             <h1>Order</h1>
@@ -56,9 +55,9 @@ const Order = () => {
                         <td>Quantity</td>
                     </tr>  
                 </thead>
-                {listOrder.map(order => {
+                {ordersData && ordersData.map((order, index) => {
                     return (
-                        <tbody>
+                        <tbody key={index}>
                             <tr>
                                 <td>{order.MaSo}</td>
                                 <td>{order.MucGia}</td>
