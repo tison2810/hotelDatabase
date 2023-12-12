@@ -121,3 +121,12 @@ tbody .last_child tr td{
     text-align: center;
     padding: 12px;
 }
+
+.centerContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* justify-content: center; */
+    /* height: 100vh; */
+    margin: 20px;
+}
