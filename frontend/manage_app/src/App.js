@@ -3,8 +3,7 @@ import Booking from './components/Function/Booking';
 function App() {
   return (
     <div>
-      {/* <Home/> */}
-      <Booking/>
+      <Home/>
     </div>
   );
 }
