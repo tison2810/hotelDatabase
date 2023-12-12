@@ -66,27 +66,25 @@ CREATE TABLE Phong
 );
 
  CREATE TABLE LuotDatPhong (
-    MaSo CHAR(12)NOT NULL,
+    MaSo CHAR(12) NOT NULL,
+    TenPhong VARCHAR(50) NOT NULL,
+    MaSoCN CHAR(4) NOT NULL,
 	CCCDKhach CHAR(12) NOT NULL,
     ThoiGianDat DATETIME,
     ThoiGianNhan DATETIME,
     ThoiGianTra DATETIME,
-    SoLuongPhong INT,
-    Checkin BIT,
-    Checkout BIT,
 	ThoiGianCheckin DATETIME,
     ThoiGianCheckout DATETIME,
     TrangThai VARCHAR(50),
     CCCDLeTan CHAR(12) NOT NULL,
-     PRIMARY KEY (MaSo)
+     PRIMARY KEY (MaSo, TenPhong, MaSoCN)
 );
 
 CREATE TABLE LoaiPhong (
     MaSo CHAR(8) NOT NULL,
     MoTa VARCHAR(255),
     SoNguoiToiDa INT NOT NULL,
-    MucGiaGio INT,
-    MucGiaQuaDem INT,
+    MucGia INT,
     SoPhongConTrong INT,
     PRIMARY KEY (MaSo)
 );
@@ -101,9 +99,8 @@ CREATE TABLE NoiThat (
 );
 
 CREATE TABLE HoaDon (
-    MaSo CHAR(12) NOT NULL,
+    MaSo INT AUTO_INCREMENT,
     ThoiGianXuatHoaDon DATETIME,
-    ThoiGianThanhToan DATETIME,
     TongTien INT,
     MaSoLuotDP CHAR (12),
     CCCDLeTan CHAR(12),
@@ -137,13 +134,6 @@ CREATE TABLE AnUong (
      PRIMARY KEY (Ten)
 );
 
-CREATE TABLE LDPCoPhong(
-    TenPhong VARCHAR(50) NOT NULL,
-    MaSoCN CHAR(4) NOT NULL,
-    MaSoLDP CHAR(12) NOT NULL,
-    PRIMARY KEY (TenPhong, MaSoCN, MaSoLDP)
-);
-
 CREATE TABLE PhucVuDichVu(
     CCCD CHAR(12) NOT NULL,
     MaDichVu CHAR(12) NOT NULL,
@@ -173,6 +163,9 @@ ALTER TABLE Phong
 ADD CONSTRAINT FK__Phong__MaLoaiPhong FOREIGN KEY (MaLoaiPhong) REFERENCES LoaiPhong(MaSo);
 
 ALTER TABLE LuotDatPhong
+ADD CONSTRAINT FK__LDP__KEY FOREIGN KEY (TenPhong,MaSoCN) REFERENCES Phong(TenPhong,MaSoCN);
+
+ALTER TABLE LuotDatPhong
 ADD CONSTRAINT FK__LDP__CCCDK FOREIGN KEY (CCCDKhach) REFERENCES KhachHang(CCCD);
 
 ALTER TABLE LuotDatPhong
@@ -198,12 +191,6 @@ ADD CONSTRAINT FK__AU__Ten FOREIGN KEY (TenMonAn) REFERENCES LoaiDichVu(Ten) ON 
 
 ALTER TABLE GiatUi
 ADD CONSTRAINT FK__GU__Ten FOREIGN KEY (Ten) REFERENCES LoaiDichVu(Ten) ON DELETE CASCADE;
-
-ALTER TABLE LDPCoPhong
-ADD CONSTRAINT FK__LDPCP__TenPhong FOREIGN KEY (TenPhong, MaSoCN) REFERENCES Phong(TenPhong, MaSoCN);
-
-ALTER TABLE LDPCoPhong
-ADD CONSTRAINT FK__LDPCP__MaLDP FOREIGN KEY (MaSoLDP) REFERENCES LuotDatPhong(MaSo);
 
 ALTER TABLE PhucVuDichVu
 ADD CONSTRAINT FK__PVDV__CCCD FOREIGN KEY (CCCD) REFERENCES NhanVien(CCCD);
@@ -253,10 +240,10 @@ INSERT INTO CaLamViec VALUE("057236253251","2023-12-12", "2023-12-12 07:00:00", 
 INSERT INTO CaLamViec VALUE("031235464575","2023-12-12", "2023-12-12 07:00:00", "2023-12-12 11:00:00");
 INSERT INTO CaLamViec VALUE("064235325142","2023-12-12", "2023-12-12 07:00:00", "2023-12-12 11:00:00");
 
-INSERT INTO LoaiPhong VALUE("STAND01","Phòng tiêu chuẩn 2 người",2,50000,200000,8);
-INSERT INTO LoaiPhong VALUE("STAND02","Phòng tiêu chuẩn 4 người",4,75000,300000,4);
-INSERT INTO LoaiPhong VALUE("VIP01","Phòng VIP tiêu chuẩn",2,150000,600000,2);
-INSERT INTO LoaiPhong VALUE("VIP02","Phòng VIP cao cấp",2,250000,1000000,1);
+INSERT INTO LoaiPhong VALUE("STAND01","Phòng tiêu chuẩn 2 người",2,200000,8);
+INSERT INTO LoaiPhong VALUE("STAND02","Phòng tiêu chuẩn 4 người",4,300000,4);
+INSERT INTO LoaiPhong VALUE("VIP01","Phòng VIP tiêu chuẩn",2,600000,2);
+INSERT INTO LoaiPhong VALUE("VIP02","Phòng VIP cao cấp",2,1000000,1);
 
 INSERT INTO Phong VALUE("Tiêu chuẩn 1-1", "CN01", "Trống", "STAND01");
 INSERT INTO Phong VALUE("Tiêu chuẩn 1-2", "CN01", "Trống", "STAND01");
