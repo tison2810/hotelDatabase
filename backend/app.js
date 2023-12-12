@@ -3,7 +3,7 @@ const app = express();
 const bodyParser = require('body-parser');
 
 
-// const employeeRoute = require('./routes/Employee.js');
+const employeeRoute = require('./routes/Employee.js');
 const customerRoute = require('./routes/Customer.js');
 // const productRoute = require('./routes/Product.js');
 // const warehouseRoute = require('./routes/Warehouse.js');
@@ -22,7 +22,7 @@ app.use((req, res, next) => {
     next();
 })
 
-// app.use(employeeRoute);
+app.use(employeeRoute);
 app.use(customerRoute);
 // app.use(productRoute);
 // app.use(warehouseRoute);

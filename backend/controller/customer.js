@@ -26,7 +26,6 @@ exports.addCustomer = (req, res, next) => {
     db.execute(sql, [CCCD, HoTen, TenDangNhap, MatKhau, NgaySinh, SoDienThoai, GioiTinh, Email, Diachi], (err, result) => {
         if (err) {
             res.send(err);
-
         }
         else {
             res.send('Success, Back to Your App');
@@ -38,13 +37,12 @@ exports.updateCustomer = (req, res, next) => {
     const MatKhau = req.body.MatKhau;
     const NgaySinh = req.body.NgaySinh;
     const SoDienThoai = req.body.SoDienThoai;
-    const GioiTinh = req.body.GioiTinh;
     const Email = req.body.Email;
     const Diachi = req.body.Diachi;
     let sql = Customer.update();
-    db.execute(sql, [TenDangNhap, MatKhau, NgaySinh, SoDienThoai, GioiTinh, Email, Diachi], (err, result) => {
+    db.execute(sql, [TenDangNhap, MatKhau, NgaySinh, SoDienThoai, Email, Diachi], (err, result) => {
         if (err) {
-            res.send('Fail to update Customer');
+            res.send(err);
         }
         else {
             res.send('Success, Back to Your App');
@@ -52,13 +50,13 @@ exports.updateCustomer = (req, res, next) => {
     });
 }
 exports.deleteCustomer = (req, res, next) => {
-    const CCCD = req.body.CCCD;
-    if (!CCCD || isNaN(CCCD)) {
-        res.send('parameter error');
-        return;
-    }
-    let sql = Customer.deleteById();
-    db.execute(sql, [CCCD], (err, result) => {
+    const TenDangNhap = req.body.TenDangNhap;
+    // if (!TenDangNhap || isNaN(TenDangNhap)) {
+    //     res.send('parameter error');
+    //     return;
+    // }
+    let sql = Customer.delete();
+    db.execute(sql, [TenDangNhap], (err, result) => {
         if (err) {
             res.send('Fail to delete Customer');
         }
@@ -69,7 +67,7 @@ exports.deleteCustomer = (req, res, next) => {
     );
 }
 exports.findCustomerbyId = (req, res, next) => {
-    const CCCD = req.body.CCCD;
+    let CCCD = req.query.CCCD;
     if (!CCCD || isNaN(CCCD)) {
         res.send('parameter error');    
         return;

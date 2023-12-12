@@ -25,8 +25,12 @@ module.exports = class Customer {
         return rows;
         
     }
-    static deleteById(id) {
+    static delete() {
         const sql = 'CALL deleteCustomer(?)';
+        return sql;
+    }
+    static filterById() {
+        const sql = 'SELECT ConNguoi.CCCD, ConNguoi.HoTen, ConNguoi.SoDienThoai, ConNguoi.GioiTinh, ConNguoi.Email FROM ConNguoi WHERE CCCD = '
         return sql;
     }
 }

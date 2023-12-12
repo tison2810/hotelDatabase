@@ -1,24 +1,12 @@
 import React from "react"
 import styles from "../../../css/InsertForm.module.css"
 
-const InsertForm = () => {
+const UpdateForm = () => {
     return (
-        <form className={styles.container} action="http://localhost:8080/customer/post" method="POST">
+        <form className={styles.container} action="http://localhost:8080/customer/update" method="POST">
             <div className={styles.form_control}>
                 <label for="CCCD">ID:</label>
-                <input type="text" name="CCCD" id="title" />
-            </div>
-            <div className={styles.form_control}>
-                <label for="HoTen">Name:</label>
-                <input type="text" name="HoTen" id="price" step="0.01" />
-            </div>
-            <div className={styles.form_control}>
-                <label for="TenDangNhap">Username:</label>
-                <input type="text" name="TenDangNhap" id="price" step="0.01" />
-            </div>
-            <div className={styles.form_control}>
-                <label for="MatKhau">Password:</label>
-                <input type="text" name="MatKhau" id="price" step="0.01" />
+                <input type="text" name="CCCD" id="price" step="0.01" />
             </div>
             <div className={styles.form_control}>
                 <label for="NgaySinh">Birthday:</label>
@@ -29,10 +17,6 @@ const InsertForm = () => {
                 <input type="text" name="SoDienThoai" id="price" step="0.01" />
             </div>  
             <div className={styles.form_control}>
-                <label for="GioiTinh">Sex:</label>
-                <input type="text" name="GioiTinh" id="price" step="0.01" />
-            </div>  
-            <div className={styles.form_control}>
                 <label for="Email">Email:</label>
                 <input type="text" name="Email" id="price" step="0.0s1" />
             </div>  
@@ -40,8 +24,12 @@ const InsertForm = () => {
                 <label for="Diachi">Address:</label>
                 <input type="text" name="Diachi" id="price" step="0.01" />
             </div>  
+            <div className={styles.form_control}>
+                <label for="MucLuong">Paid:</label>
+                <input type="text" name="MucLuong" id="price" step="0.01" />
+            </div> 
             <button className={styles.btn} type="submit"> Submit </button>
         </form>
     )
 }
-export default InsertForm;
+export default UpdateForm;

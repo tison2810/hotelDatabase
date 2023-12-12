@@ -10,7 +10,7 @@ const UpdateForm = () => {
             </div>
             <div className={styles.form_control}>
                 <label for="MatKhau">Password:</label>
-                <input type="text" name="MatKhhau" id="price" step="0.01" />
+                <input type="text" name="MatKhau" id="price" step="0.01" />
             </div>
             <div className={styles.form_control}>
                 <label for="NgaySinh">Birthday:</label>
@@ -19,10 +19,6 @@ const UpdateForm = () => {
             <div className={styles.form_control}>
                 <label for="SoDienThoai">Phone:</label>
                 <input type="text" name="SoDienThoai" id="price" step="0.01" />
-            </div>  
-            <div className={styles.form_control}>
-                <label for="GioiTinh">Sex:</label>
-                <input type="text" name="GioiTinh" id="price" step="0.01" />
             </div>  
             <div className={styles.form_control}>
                 <label for="Email">Email:</label>

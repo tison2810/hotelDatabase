@@ -4,12 +4,14 @@ import styles from "../../css/Part.module.css"
 import InsertForm from "./EmployeeFunction/InsertEmployee";
 import DeleteForm from "./EmployeeFunction/DeleteEmployee";
 import FilterForm from "./EmployeeFunction/FilterEmployee";
+import UpdateForm from "./EmployeeFunction/UpdateEmployee";
 
 
 const Employee = () => {
     const [listEmployee, SetListEmployee] = useState([])
     const [insertEmp, SetInsertEmp] = useState(false);
     const [deleteEmp, SetDeleteEmp] = useState(false);
+    const [updateEmp, SetUpdateEmp] = useState(false);
     const [filter, SetFilter] = useState(false);
 
 
@@ -18,11 +20,13 @@ const Employee = () => {
             SetInsertEmp(true)
             SetDeleteEmp(false)
             SetFilter(false)
+            SetUpdateEmp(false)
         }
         else {
             SetInsertEmp(false)
             SetDeleteEmp(false)
             SetFilter(false)
+            SetUpdateEmp(false)
         }
     }
 
@@ -31,11 +35,13 @@ const Employee = () => {
             SetDeleteEmp(true)
             SetFilter(false)
             SetInsertEmp(false)
+            SetUpdateEmp(false)
         }
         else {
             SetInsertEmp(false)
             SetDeleteEmp(false)
             SetFilter(false)
+            SetUpdateEmp(false)
         }
     }
 
@@ -44,11 +50,28 @@ const Employee = () => {
             SetFilter(true)
             SetInsertEmp(false)
             SetDeleteEmp(false)
+            SetUpdateEmp(false)
         }
         else {
             SetInsertEmp(false)
             SetDeleteEmp(false)
             SetFilter(false)
+            SetUpdateEmp(false)
+        }
+    }
+
+    function UpdateEmployee() {
+        if (updateEmp === false) {
+            SetFilter(false)
+            SetInsertEmp(false)
+            SetDeleteEmp(false)
+            SetUpdateEmp(true)
+        }
+        else {
+            SetInsertEmp(false)
+            SetDeleteEmp(false)
+            SetFilter(false)
+            SetUpdateEmp(false)
         }
     }
 
@@ -92,8 +115,8 @@ const Employee = () => {
                             <tr>
                                 <td>{employee.CCCD}</td>
                                 <td>{employee.HoTen}</td>
-                                <td>{employee.Phone}</td>
-                                <td>{employee.Sex}</td>
+                                <td>{employee.SoDienThoai}</td>
+                                <td>{employee.GioiTinh}</td>
                                 <td>{employee.Email}</td>
                             </tr>
                         </tbody>
@@ -105,14 +128,17 @@ const Employee = () => {
                 <button onClick={InsertEmployee} className={styles.button}>Add Employee</button>
                 <button onClick={DeleteEmployee} className={styles.button}>Delete Employee</button>
                 <button onClick={FilterEmployee} className={styles.button}>Search Employee</button>
+                <button onClick={UpdateEmployee} className={styles.button}>Update Employee</button>
             </div>
             
-            {(insertEmp && !deleteEmp && !filter) && <InsertForm/>
+            {(insertEmp && !deleteEmp && !filter && !updateEmp) && <InsertForm/>
             } 
-            {(!insertEmp && deleteEmp && !filter) && <DeleteForm/>
+            {(!insertEmp && deleteEmp && !filter && !updateEmp) && <DeleteForm/>
             } 
-            {(!insertEmp && !deleteEmp && filter) && <FilterForm/>
+            {(!insertEmp && !deleteEmp && filter && !updateEmp) && <FilterForm/>
             } 
+            {(!insertEmp && !deleteEmp && !filter && updateEmp) && <UpdateForm/>
+            }
         </div>
     )
 }
