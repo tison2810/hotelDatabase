@@ -3,7 +3,7 @@ import styles from "../../../css/InsertForm.module.css"
 
 const FilterForm = () => {
     return (
-        <form className={styles.container} action="http://localhost:8080/customer/filter" method="GET">
+        <form className={styles.container} action="http://localhost:8080/employee/filter" method="GET">
             <div className={styles.form_control}>
                 <label for="id">ID Search:</label>
                 <input type="number" name="id" id="title" />

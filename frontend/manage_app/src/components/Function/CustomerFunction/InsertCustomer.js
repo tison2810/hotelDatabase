@@ -6,11 +6,19 @@ const InsertForm = () => {
         <form className={styles.container} action="http://localhost:8080/customer/post" method="POST">
             <div className={styles.form_control}>
                 <label for="CCCD">ID:</label>
-                <input type="number" name="CCCD" id="title" />
+                <input type="text" name="CCCD" id="title" />
             </div>
             <div className={styles.form_control}>
                 <label for="HoTen">Name:</label>
                 <input type="text" name="HoTen" id="price" step="0.01" />
+            </div>
+            <div className={styles.form_control}>
+                <label for="TenDangNhap">Username:</label>
+                <input type="text" name="TenDangNhap" id="price" step="0.01" />
+            </div>
+            <div className={styles.form_control}>
+                <label for="MatKhau">Password:</label>
+                <input type="text" name="MatKhhau" id="price" step="0.01" />
             </div>
             <div className={styles.form_control}>
                 <label for="NgaySinh">Birthday:</label>
@@ -18,7 +26,7 @@ const InsertForm = () => {
             </div>
             <div className={styles.form_control}>
                 <label for="SoDienThoai">Phone:</label>
-                <input type="number" name="SoDienThoai" id="price" step="0.01" />
+                <input type="text" name="SoDienThoai" id="price" step="0.01" />
             </div>  
             <div className={styles.form_control}>
                 <label for="GioiTinh">Sex:</label>
@@ -26,7 +34,11 @@ const InsertForm = () => {
             </div>  
             <div className={styles.form_control}>
                 <label for="Email">Email:</label>
-                <input type="text" name="Email" id="price" step="0.01" />
+                <input type="text" name="Email" id="price" step="0.0s1" />
+            </div>  
+            <div className={styles.form_control}>
+                <label for="Diachi">Address:</label>
+                <input type="text" name="Diachi" id="price" step="0.01" />
             </div>  
             <button className={styles.btn} type="submit"> Submit </button>
         </form>

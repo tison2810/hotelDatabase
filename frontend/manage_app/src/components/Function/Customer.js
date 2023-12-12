@@ -4,12 +4,13 @@ import styles from "../../css/Part.module.css"
 import InsertForm from "./CustomerFunction/InsertCustomer";
 import DeleteForm from "./CustomerFunction/DeleteCustomer";
 import FilterForm from "./CustomerFunction/FilterCustomer";
-
+import UpdateForms from "./CustomerFunction/UpdateCustomer";
 
 const Customer = () => {
     const [listCustomer, SetListCustomer] = useState([])
     const [insertCus, SetInsertCus] = useState(false);
     const [deleteCus, SetDeleteCus] = useState(false);
+    const [updateCus, SetUpdateCus] = useState(false);
     const [filter, SetFilter] = useState(false);
 
 
@@ -18,11 +19,13 @@ const Customer = () => {
             SetInsertCus(true)
             SetDeleteCus(false)
             SetFilter(false)
+            SetUpdateCus(false)
         }
         else {
             SetInsertCus(false)
             SetDeleteCus(false)
             SetFilter(false)
+            SetUpdateCus(false)
         }
     }
 
@@ -31,11 +34,13 @@ const Customer = () => {
             SetDeleteCus(true)
             SetFilter(false)
             SetInsertCus(false)
+            SetUpdateCus(false)
         }
         else {
             SetInsertCus(false)
             SetDeleteCus(false)
             SetFilter(false)
+            SetUpdateCus(false)
         }
     }
 
@@ -44,11 +49,28 @@ const Customer = () => {
             SetFilter(true)
             SetInsertCus(false)
             SetDeleteCus(false)
+            SetUpdateCus(false)
         }
         else {
             SetInsertCus(false)
             SetDeleteCus(false)
             SetFilter(false)
+            SetUpdateCus(false)
+        }
+    }
+
+    function UpdateCustomer() {
+        if (updateCus === false) {
+            SetUpdateCus(true)
+            SetFilter(false)
+            SetInsertCus(false)
+            SetDeleteCus(false)
+        }
+        else {
+            SetInsertCus(false)
+            SetDeleteCus(false)
+            SetFilter(false)
+            SetUpdateCus(false)
         }
     }
     useEffect(() => {
@@ -91,8 +113,8 @@ const Customer = () => {
                             <tr>
                                 <td>{customer.CCCD}</td>
                                 <td>{customer.HoTen}</td>
-                                <td>{customer.Phone}</td>
-                                <td>{customer.Sex}</td>
+                                <td>{customer.SoDienThoai}</td>
+                                <td>{customer.GioiTinh}</td>
                                 <td>{customer.Email}</td>
                             </tr>
                         </tbody>
@@ -105,14 +127,18 @@ const Customer = () => {
                 <button onClick={InsertCustomer} className={styles.button}>Add Customer</button>
                 <button onClick={DeleteCustomer} className={styles.button}>Delete Customer</button>
                 <button onClick={FilterCustomer} className={styles.button}>Search Customer</button>
+                <buttom onClick={UpdateCustomer} className={styles.button}>Update Customer</buttom>
             </div>
             
-            {(insertCus && !deleteCus && !filter) && <InsertForm/>
+            {(insertCus && !deleteCus && !filter && !updateCus) && <InsertForm/>
             } 
-            {(!insertCus && deleteCus && !filter) && <DeleteForm/>
+            {(!insertCus && deleteCus && !filter && !updateCus) && <DeleteForm/>
             } 
-            {(!insertCus && !deleteCus && filter) && <FilterForm/>
+            {(!insertCus && !deleteCus && filter && !updateCus) && <FilterForm/>
             } 
+            {(!insertCus && !deleteCus && !filter && updateCus) && <UpdateForms/>
+            }
+
         </div>
     )
 }
