@@ -20,6 +20,7 @@ import Report from "../components/Function/Report"
 import WareHouse from "../components/Function/Warehouse"
 import Account from "../components/Function/Account"
 import Order from "../components/Function/Order"
+import Booking from "../components/Function/Booking"
 const Aside = () => {
     return (
         

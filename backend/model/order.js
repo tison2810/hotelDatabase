@@ -1,11 +1,11 @@
 const db = require('../util/database');
 
-module.exports = class Customer {
+module.exports = class Order {
     constructor(SoDienThoai) {
         this.SoDienThoai = SoDienThoai;
     }
-    static getOrder() {
-        const sql = 'listOrderByPhoneNumber (?)';
+    static get() {
+        const sql = 'CALL listOrderByPhoneNumber(?)';
         return sql;
     }
 }

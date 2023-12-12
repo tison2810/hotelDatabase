@@ -13,7 +13,7 @@ exports.getEmployees = (req, res, next) => {
 } 
 exports.addEmployee = (req, res, next) => {
     const CCCD = req.body.CCCD;
-    const CCCD_Mgr = req.body.CCCD_Mgr
+    const CCCD_Mgr = req.body.CCCD_Mgr;
     const HoTen = req.body.HoTen;
     const NgaySinh = req.body.NgaySinh;
     const SoDienThoai = req.body.SoDienThoai;

@@ -67,18 +67,6 @@ exports.deleteCustomer = (req, res, next) => {
     );
 }
 exports.findCustomerbyId = (req, res, next) => {
-    // let CCCD = req.query.CCCD;
-    // if (!CCCD || isNaN(CCCD)) {
-    //     res.send('parameter error');    
-    //     return;
-    // }
-    // let sql = Customer.filterById() + String(CCCD);
-    // db.execute(sql, (err, result) => {
-    //     if (err) console.log(err);
-    //     else {
-    //         res.json(result);
-    //     }
-    // });
     let CCCD = req.query.CCCD;
     let sql = Customer.filterById() + String(CCCD);
     db.query(sql, (err, result) => {
