@@ -103,7 +103,6 @@ const Report = () => {
                 })}
 
                 </table>
-                
             </main>
             <div className={styles.button_container}>
                 <button onClick={InsertReport} className={styles.button}>Add Report</button>

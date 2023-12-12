@@ -4,10 +4,11 @@ import { AiOutlineCloseCircle } from "react-icons/ai";
 import { MdDashboard,MdProductionQuantityLimits } from "react-icons/md"
 import { BsFillPersonFill } from "react-icons/bs"
 import { FiUsers } from "react-icons/fi"
-import { FaWarehouse } from "react-icons/fa"
+import { MdOutlineLocalHotel } from "react-icons/md";
 import { CiLogout } from "react-icons/ci"
 import { FaFileWord } from "react-icons/fa"
 import {TfiAnnouncement} from "react-icons/tfi"
+import { FaAddressCard } from "react-icons/fa";
 import DashBoard from "./Function/DashBoard";
 import { BrowserRouter,Routes, Route, Link } from 'react-router-dom'
 import Customer from "../components/Function/Customer"
@@ -15,6 +16,7 @@ import Employee from "../components/Function/Employee"
 import Product from "../components/Function/Product"
 import Report from "../components/Function/Report"
 import WareHouse from "../components/Function/Warehouse"
+import Account from "../components/Function/Account"
 
 const Aside = () => {
     return (
@@ -23,7 +25,7 @@ const Aside = () => {
             <aside>
                 <div className={styles.top}>
                     <div className={styles.logo}>
-                        <h1 className={styles.text_muted}>Tran<span style={{color:'#32cc4c'}}>sportation</span></h1>
+                        <h1 className={styles.text_muted}>Hierophant<span style={{color:'#32cc4c'}}>Green </span><span>Hotel</span></h1>
                     </div> 
                     <div className={styles.close} id="close-btn">
                         <AiOutlineCloseCircle />
@@ -62,9 +64,15 @@ const Aside = () => {
                     </Link>   
                      <Link to='/warehouse'>
                         <span>
-                            <FaWarehouse />
+                            <MdOutlineLocalHotel />
                         </span>
                         <h3>WareHouse</h3>
+                    </Link>
+                    <Link to='/account'>
+                        <span>
+                            <FaAddressCard />
+                        </span>
+                        <h3>Account</h3>
                     </Link>
                     <a href="#">
                         <span>
@@ -84,6 +92,7 @@ const Aside = () => {
                     <Route path="/product" element={<Product/>} />
                     <Route path="/employees" element={<Employee />} />
                     <Route path="/warehouse" element={<WareHouse/>} />
+                    <Route path="/account" element={<Account/>} />
             </Routes>
 
             <div className={styles.right}>

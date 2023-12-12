@@ -37,7 +37,7 @@ tbody .last_child tr td{
     margin-top: 2rem;
     width: 100%;
     display: flex;
-    justify-content: end;
+    justify-content: end;;
 }
 .button{
     width: 120px;
