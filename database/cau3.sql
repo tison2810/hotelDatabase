@@ -30,6 +30,7 @@ BEGIN
     LEFT JOIN ConNguoi On ConNguoi.CCCD = KhachHang.CCCD
     WHERE ConNguoi.SoDienThoai = phoneNumber
     GROUP BY LoaiPhong.MaSo
+    HAVING SoLuong >= 1
     ORDER BY SoLuong;
 END//
 
