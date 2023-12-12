@@ -15,3 +15,18 @@ exports.getOrder = (req, res, next) => {
     });
 
 }
+
+exports.sumOrder = (req, res, next) => {
+    const phoneNumber = req.query.SoDienThoai;
+    let sql = Order.sum();
+    db.query(sql, [phoneNumber], (err, result) => {
+        if (err) {
+            res.send(err);
+        }
+        else {
+            // console.log(result);
+            res.json(result);
+        }
+    });
+
+}

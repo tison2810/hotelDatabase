@@ -8,4 +8,10 @@ module.exports = class Order {
         const sql = 'CALL listOrderByPhoneNumber(?)';
         return sql;
     }
+
+    static sum() {
+        const sql = 'SELECT TongChiTieu(?) as TotalExpenses';
+        return sql;
+    }
+
 }

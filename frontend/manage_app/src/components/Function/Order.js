@@ -5,6 +5,7 @@ import FilterForm from "./OrderFunction/OrderSearch";
 
 const Order = () => {
     const [listOrder, SetListOrder] = useState([]);
+    const [sumOrder, SetSumOrder] = useState([0]);
     const [phoneNumber, setPhoneNumber] = useState('');
 
     const fetchOrderData = (phoneNumber) => {
@@ -23,15 +24,32 @@ const Order = () => {
                 console.log(err);
             });
     }
+    const largestSpent = (phoneNumber) => {
+        fetch(`http://localhost:8080/order/sum?SoDienThoai=${phoneNumber}`)
+            .then(res => {
+                if (res.status !== 200) {
+                    throw new Error('Failed to fetch order status.');
+                }
+                return res.json();
+            })
+            .then(resData => {
+                SetSumOrder(resData);
+                console.log(resData);
+            })
+            .catch(err => {
+                console.log(err);
+            });
+    }
     const handleFormSubmit = (event) => {
         event.preventDefault();
         fetchOrderData(phoneNumber);
+        largestSpent(phoneNumber);
     };
 
     const handlePhoneNumberChange = (event) => {
         setPhoneNumber(event.target.value);
     };
-
+    const TotalExpenses = sumOrder;
     const ordersData = listOrder.filter(Array.isArray)[0];
     return (
        <div className={styles.container}>
@@ -67,6 +85,9 @@ const Order = () => {
                     )
                 })}
                 </table>
+                <div className={styles.total}>
+                    <p>Total Expenses: {TotalExpenses[0].TotalExpenses}</p>
+                </div>
             </main>
             {/* <div className={styles.button_container}>
                 <button onClick={FilterOrder} className={styles.button}>Search Order</button>

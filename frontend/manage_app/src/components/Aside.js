@@ -53,12 +53,12 @@ const Aside = () => {
                         </span>
                         <h3>Customer</h3>
                     </Link>   
-                    <Link to="/report">
+                    {/* <Link to="/report">
                         <span>
                             <FaFileWord />
                         </span>
                         <h3>Report</h3>
-                    </Link>   
+                    </Link>    */}
                     <Link to='/salary'>
                         <span>
                             <MdProductionQuantityLimits />
@@ -75,7 +75,7 @@ const Aside = () => {
                         <span>
                             <MdOutlineLocalHotel />
                         </span>
-                        <h3>WareHouse</h3>
+                        <h3>Apartment</h3>
                     </Link>
                     <Link to='/account'>
                         <span>

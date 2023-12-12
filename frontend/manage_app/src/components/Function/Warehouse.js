@@ -26,7 +26,7 @@ const WareHouse = () => {
     
     return (
         <div className={styles.container}>
-            <h1>Warehouse</h1>
+            <h1>Apartment</h1>
             <div className={styles.note}>
                 <p><i>Last updated 24h ago</i></p>
             </div>
