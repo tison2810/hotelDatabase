@@ -9,6 +9,7 @@ import { CiLogout } from "react-icons/ci"
 import { FaFileWord } from "react-icons/fa"
 import {TfiAnnouncement} from "react-icons/tfi"
 import { FaAddressCard } from "react-icons/fa";
+import { FaTicketAlt } from "react-icons/fa";
 import DashBoard from "./Function/DashBoard";
 import { BrowserRouter,Routes, Route, Link } from 'react-router-dom'
 import Customer from "../components/Function/Customer"
@@ -17,6 +18,7 @@ import Product from "../components/Function/Product"
 import Report from "../components/Function/Report"
 import WareHouse from "../components/Function/Warehouse"
 import Account from "../components/Function/Account"
+import Booking from "../components/Function/Booking"
 
 const Aside = () => {
     return (
@@ -37,7 +39,13 @@ const Aside = () => {
                             <MdDashboard />
                         </span>
                         <h3>DashBoard</h3>
-                    </Link>   
+                    </Link>
+                    <Link to="/booking" className={styles.active}>
+                        <span>
+                            <FaTicketAlt />
+                        </span>
+                        <h3>Booking</h3>
+                    </Link>
                     <Link to="/customer" className={styles.active}>
                         <span>
                             <FiUsers />
@@ -87,6 +95,7 @@ const Aside = () => {
             </aside>
             <Routes>
                     <Route path="/" element={<DashBoard/>} />
+                    <Route path="/booking" element={<Booking/>} />
                     <Route path="/customer" element={<Customer/>} />
                     <Route path="/report" element={<Report/>} />
                     <Route path="/product" element={<Product/>} />
