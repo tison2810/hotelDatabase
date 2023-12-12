@@ -11,4 +11,6 @@ router.post('/customer/delete', customerControler.deleteCustomer);
 
 router.get('/customer/filter', customerControler.findCustomerbyId);
 
+router.post('/customer/update', customerControler.updateCustomer);
+
 module.exports = router;
