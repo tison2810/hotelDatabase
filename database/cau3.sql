@@ -19,7 +19,7 @@ BEGIN
     IF (SELECT LENGTH(phoneNumber) <> 10 OR phoneNumber NOT REGEXP "^0[0-9]{9}") THEN
         SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = "Số điện thoại phải bắt đầu bằng 0 và có đúng 10 chữ số!";
     END IF;
-    IF (NOT EXISTS (SELECT * FROM ConNguoi,KhachHang WHERE ConNguoi.CCCD = KhachHang.CCCD AND ConNguoi.SoDienThoai = phoneNumber) THEN
+    IF (NOT EXISTS (SELECT * FROM ConNguoi,KhachHang WHERE ConNguoi.CCCD = KhachHang.CCCD AND ConNguoi.SoDienThoai = phoneNumber)) THEN
         SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = "Khách hàng không tồn tại. Vui lòng nhập lại SĐT!";
     END IF;
     SELECT LoaiPhong.MaSo, MucGia, COUNT(*) AS SoLuong
