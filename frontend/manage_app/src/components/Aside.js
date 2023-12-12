@@ -8,6 +8,7 @@ import { MdOutlineLocalHotel } from "react-icons/md";
 import { CiLogout } from "react-icons/ci"
 import { FaFileWord } from "react-icons/fa"
 import {TfiAnnouncement} from "react-icons/tfi"
+import { GoListUnordered } from "react-icons/go";
 import { FaAddressCard } from "react-icons/fa";
 import DashBoard from "./Function/DashBoard";
 import { BrowserRouter,Routes, Route, Link } from 'react-router-dom'
@@ -17,7 +18,7 @@ import Product from "../components/Function/Product"
 import Report from "../components/Function/Report"
 import WareHouse from "../components/Function/Warehouse"
 import Account from "../components/Function/Account"
-
+import Order from "../components/Function/Order"
 const Aside = () => {
     return (
         
@@ -74,6 +75,12 @@ const Aside = () => {
                         </span>
                         <h3>Account</h3>
                     </Link>
+                    <Link to='/order'>
+                        <span>
+                        <GoListUnordered />
+                        </span>
+                        <h3>Order</h3>
+                    </Link>
                     <a href="#">
                         <span>
                             <CiLogout />
@@ -93,6 +100,7 @@ const Aside = () => {
                     <Route path="/employees" element={<Employee />} />
                     <Route path="/warehouse" element={<WareHouse/>} />
                     <Route path="/account" element={<Account/>} />
+                    <Route path="/order" element={<Order/>} />
             </Routes>
 
             {/* <div className={styles.right}>
