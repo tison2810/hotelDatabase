@@ -4,12 +4,12 @@ const db = require('../util/database');
 exports.getOrder = (req, res, next) => {
     const phoneNumber = req.query.SoDienThoai;
     let sql = Order.get();
-    db.execute(sql, [phoneNumber], (err, result) => {
+    db.query(sql, [phoneNumber], (err, result) => {
         if (err) {
             res.send(err);
         }
         else {
-            console.log(result);
+            // console.log(result);
             res.json(result);
         }
     });
