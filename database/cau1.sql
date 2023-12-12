@@ -1,246 +1,217 @@
-USE transportation;
+USE hoteldatabase;
 
-	
 DELIMITER //
 
-CREATE PROCEDURE insertKH(
-	Ma_KH_n INT,
-    CMND_n INT,
-    Ten_n VARCHAR(255),
-    Mail_n VARCHAR(255)
+CREATE PROCEDURE insertCustomer(
+    CCCD_KH CHAR(12),
+    Ten_KH VARCHAR(255),
+    TenDangNhap_KH VARCHAR(20),
+    matkhau_KH VARCHAR(20),
+    NgaySinh_KH DATE,
+    SoDT_KH CHAR(10),
+    GioiTinh_KH CHAR(1),
+    Email_KH VARCHAR(255),
+    DiaChi_KH VARCHAR(1000)
 )
 BEGIN
-	IF Ma_KH_n IS NULL THEN 
-		SIGNAL SQLSTATE '45000' 
-            SET MESSAGE_TEXT = 'Mã khách hàng rỗng';
-	END IF;
-    IF CMND_n IS NULL THEN 
-		SIGNAL SQLSTATE '45000' 
-            SET MESSAGE_TEXT = 'CMND rỗng';
-	END IF;
-    IF Ten_n IS NULL THEN 
-		SIGNAL SQLSTATE '45000' 
-            SET MESSAGE_TEXT = 'Tên khách hàng rỗng';
-	END IF;
-    IF Mail_n NOT LIKE "%@gmail.com" THEN  
-		SIGNAL SQLSTATE '45000' 
-            SET MESSAGE_TEXT = 'Email không đúng mẫu @gmail.com';
+    IF CCCD_KH IS NULL THEN
+        SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = "CCCD không được bỏ trống!";
     END IF;
-    INSERT INTO khach_hang VALUE (Ma_KH_n, CMND_n, Ten_n, Mail_n);
-END //
+    IF Ten_KH IS NULL THEN
+        SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = "Họ và tên không được bỏ trống!";
+    END IF;
+    IF TenDangNhap_KH IS NULL THEN
+        SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = "Tên đăng nhập không được bỏ trống!";
+    END IF;
+    IF matkhau_KH IS NULL THEN
+        SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = "Mật khẩu không được bỏ trống!";
+    END IF;
+    IF NgaySinh_KH IS NULL THEN
+        SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = "Ngày sinh không được bỏ trống!";
+    END IF;
+    IF SoDT_KH IS NULL THEN
+        SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = "Số điện thoại không được bỏ trống!";
+    END IF;
+    IF Email_KH NOT LIKE "%@gmail.com" THEN  
+		SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = 'Email không đúng định dạng @gmail.com';
+    END IF;
+    IF (EXISTS (SELECT * FROM TaiKhoanThanhVien WHERE TenDangNhap = TenDangNhap_KH)) THEN
+        SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = "Tên đăng nhập đã tồn tại, hãy thử tên đăng nhập khác!";
+    END IF;
+    IF (SELECT LENGTH(CCCD_KH) <> 12) THEN
+        SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = "CCCD phải có đúng 12 chữ số!";
+    END IF;
+    IF (SELECT LENGTH(SoDT_KH) <> 10 OR SoDT_KH NOT REGEXP "^0[0-9]{9}") THEN
+        SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = "Số điện thoại phải bắt đầu bằng 0 và có đúng 10 chữ số!";
+    END IF;
+    IF DATEDIFF(CURDATE(), NgaySinh_KH) < 6570 THEN
+        SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = "Khách hàng phải từ đủ 18 tuổi trở lên!";
+    END IF;
+    INSERT INTO ConNguoi VALUE (CCCD_KH, Ten_KH, NgaySinh_KH, SoDT_KH, GioiTinh_KH, Email_KH, DiaChi_KH);
+    INSERT INTO KhachHang VALUE (CCCD_KH);
+    INSERT INTO TaiKhoanThanhVien (CCCD, TenDangNhap, MatKhau, NgayTao) VALUE (CCCD_KH, TenDangNhap_KH, matkhau_KH, CURDATE());
 
+END//
 
-CREATE PROCEDURE updateKHfromMaKH(
-	Ma_KH_update INT,
-    updateCMND BOOLEAN,
-    CMND_n INT,
-    updateTen BOOLEAN,
-    Ten_n VARCHAR(255),
-    updateMail BOOLEAN,
-    Mail_n VARCHAR(255)
+CREATE PROCEDURE updateCustomer(
+    TenDangNhap_KH VARCHAR(20),
+    matkhau_KH VARCHAR(20),
+    NgaySinh_KH DATE,
+    SoDT_KH CHAR(10),
+    Email_KH VARCHAR(255),
+    DiaChi_KH VARCHAR(1000)
 )
 BEGIN
-	IF NOT EXISTS (SELECT Ma_KH FROM khach_hang WHERE Ma_KH = Ma_KH_update) THEN 
-		SIGNAL SQLSTATE '45000' 
-			SET MESSAGE_TEXT = 'Không tồn tại khách hàng theo mã khách hàng đã nhập';
+    IF TenDangNhap_KH IS NULL THEN
+        SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = "Tên đăng nhập không được bỏ trống!";
     END IF;
-    
-	IF updateCMND THEN 
-		IF CMND_n IS NULL THEN 
-			SIGNAL SQLSTATE '45000' 
-				SET MESSAGE_TEXT = 'CMND rỗng';
-		END IF;
-        UPDATE khach_hang
-		SET CMND = CMND_n
-		WHERE Ma_KH = Ma_KH_update;
+    IF matkhau_KH IS NULL THEN
+        SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = "Mật khẩu không được bỏ trống!";
     END IF;
-    
-    IF updateTen THEN 
-		IF Ten_n IS NULL THEN 
-			SIGNAL SQLSTATE '45000' 
-				SET MESSAGE_TEXT = 'Tên khách hàng rỗng';
-		END IF;
-        UPDATE khach_hang
-		SET Ten = Ten_n
-		WHERE Ma_KH = Ma_KH_update;
+    IF NgaySinh_KH IS NULL THEN
+        SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = "Ngày sinh không được bỏ trống!";
     END IF;
-    
-    IF updateMail THEN 
-		IF Mail_n NOT LIKE "%@gmail.com" THEN  
-			SIGNAL SQLSTATE '45000' 
-				SET MESSAGE_TEXT = 'Email không đúng mẫu @gmail.com';
-		END IF;
-        UPDATE khach_hang
-		SET Mail = Mail_n
-		WHERE Ma_KH = Ma_KH_update;
+    IF SoDT_KH IS NULL THEN
+        SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = "Số điện thoại không được bỏ trống!";
     END IF;
-	
-END //
+    IF Email_KH NOT LIKE "%@gmail.com" THEN  
+		SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = 'Email không đúng định dạng @gmail.com';
+    END IF;
+    IF (NOT EXISTS (SELECT * FROM TaiKhoanThanhVien WHERE TenDangNhap = TenDangNhap_KH)) THEN
+        SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = "Tên đăng nhập không tồn tại!";
+    END IF;
+    IF (SELECT LENGTH(SoDT_KH) <> 10 OR SoDT_KH NOT REGEXP "^0[0-9]{9}") THEN
+        SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = "Số điện thoại phải bắt đầu bằng 0 và có đúng 10 chữ số!";
+    END IF;
+    IF DATEDIFF(CURDATE(), NgaySinh_KH) < 6570 THEN
+        SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = "Khách hàng phải từ đủ 18 tuổi trở lên!";
+    END IF;
+    UPDATE TaiKhoanThanhVien SET MatKhau = matkhau_KH WHERE TenDangNhap = TenDangNhap_KH;
+    UPDATE ConNguoi SET NgaySinh = NgaySinh_KH, SoDienThoai = SoDT_KH, Email = Email_KH, DiaChi = DiaChi_KH
+    WHERE CCCD IN (SELECT CCCD FROM TaiKhoanThanhVien WHERE TenDangNhap = TenDangNhap_KH);
+END//
 
-CREATE PROCEDURE updateKHfromCMND(
-	CMND_input INT,
-    updateMa_KH BOOLEAN,
-    Ma_KH_n INT,
-    updateCMND BOOLEAN,
-    CMND_n INT,
-    updateTen BOOLEAN,
-    Ten_n VARCHAR(255),
-    updateMail BOOLEAN,
-    Mail_n VARCHAR(255)
+CREATE PROCEDURE deleteCustomer(
+    TenDangNhap_KH VARCHAR(20)
 )
 BEGIN
+    IF TenDangNhap_KH IS NULL THEN
+        SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = "Tên đăng nhập không được bỏ trống!";
+    END IF;
+    IF (NOT EXISTS (SELECT * FROM TaiKhoanThanhVien WHERE TenDangNhap = TenDangNhap_KH)) THEN
+        SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = "Tên đăng nhập không tồn tại!";
+    END IF;
+    DELETE FROM ConNguoi WHERE CCCD IN (SELECT CCCD FROM TaiKhoanThanhVien WHERE TenDangNhap = TenDangNhap_KH);
+END//
 
-	IF CMND_input IS NULL THEN 
-		SIGNAL SQLSTATE '45000' 
-			SET MESSAGE_TEXT = 'CMND input rỗng';
-	END IF;
-    
-	IF NOT EXISTS (SELECT CMND FROM khach_hang WHERE CMND = CMND_input) THEN 
-		SIGNAL SQLSTATE '45000' 
-			SET MESSAGE_TEXT = 'Không tồn tại khách hàng theo CMND đã nhập';
-    END IF;
-    
-	IF updateMa_KH THEN 
-		IF Ma_KH_n IS NULL THEN 
-			SIGNAL SQLSTATE '45000' 
-				SET MESSAGE_TEXT = 'Mã khách hàng rỗng';
-		END IF;
-        UPDATE khach_hang
-		SET Ma_KH = Ma_KH_n
-		WHERE CMND = CMND_input;
-    END IF;
-    
-    IF updateCMND THEN 
-		IF CMND_n IS NULL THEN 
-			SIGNAL SQLSTATE '45000' 
-				SET MESSAGE_TEXT = 'CMND mới rỗng';
-		END IF;
-        UPDATE khach_hang
-		SET CMND = CMND_n
-		WHERE CMND = CMND_input;
-    END IF;
-    
-    IF updateTen THEN 
-		IF Ten_n IS NULL THEN 
-			SIGNAL SQLSTATE '45000' 
-				SET MESSAGE_TEXT = 'Tên khách hàng rỗng';
-		END IF;
-        UPDATE khach_hang
-		SET Ten = Ten_n
-		WHERE CMND = CMND_input;
-    END IF;
-    
-    IF updateMail THEN 
-		IF Mail_n NOT LIKE "%@gmail.com" THEN  
-			SIGNAL SQLSTATE '45000' 
-				SET MESSAGE_TEXT = 'Email không đúng mẫu @gmail.com';
-		END IF;
-        UPDATE khach_hang
-		SET Mail = Mail_n
-		WHERE CMND = CMND_input;
-    END IF;
-	
-END //
-
-CREATE PROCEDURE deleteKHfromMaKH(
-	Ma_KH_delete INT
+CREATE PROCEDURE insertEmployee(
+    CCCD_NV CHAR(12),
+    Ten_NV VARCHAR(255),
+    CCCD_Mgr CHAR(12),
+    NgaySinh_NV DATE,
+    SoDT_NV CHAR(10),
+    GioiTinh_NV CHAR(1),
+    Email_NV VARCHAR(255),
+    DiaChi_NV VARCHAR(1000),
+    MaCN_NV CHAR(4),
+    MucLuong_NV INT,
+    QuanLiFlag_NV CHAR(1),
+    LeTanFlag_NV CHAR(1),
+    PhucVuFlag_NV CHAR(1)
 )
 BEGIN
-	IF NOT EXISTS (SELECT Ma_KH FROM khach_hang WHERE Ma_KH = Ma_KH_delete) THEN 
-		SIGNAL SQLSTATE '45000' 
-			SET MESSAGE_TEXT = 'Không tồn tại khách hàng theo mã khách hàng đã nhập';
+    IF CCCD_NV IS NULL THEN
+        SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = "CCCD không được bỏ trống!";
     END IF;
-	DELETE FROM khach_hang WHERE Ma_KH = Ma_KH_delete;
-END //
+    IF Ten_NV IS NULL THEN
+        SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = "Họ và tên không được bỏ trống!";
+    END IF;
+    IF NgaySinh_NV IS NULL THEN
+        SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = "Ngày sinh không được bỏ trống!";
+    END IF;
+    IF SoDT_NV IS NULL THEN
+        SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = "Số điện thoại không được bỏ trống!";
+    END IF;
+    IF MaCN_NV IS NULL THEN
+        SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = "Mã chi nhánh làm việc không được bỏ trống!";
+    END IF;
+    IF MucLuong_NV IS NULL THEN
+        SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = "Mức lương không được bỏ trống!";
+    END IF;
+    IF Email_NV NOT LIKE "%@gmail.com" THEN  
+		SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = 'Email không đúng định dạng @gmail.com';
+    END IF;
+    IF (SELECT LENGTH(CCCD_NV) <> 12) THEN
+        SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = "CCCD phải có đúng 12 chữ số!";
+    END IF;
+    IF (SELECT LENGTH(SoDT_NV) <> 10 OR SoDT_NV NOT REGEXP "^0[0-9]{9}") THEN
+        SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = "Số điện thoại phải bắt đầu bằng 0 và có đúng 10 chữ số!";
+    END IF;
+    IF DATEDIFF(CURDATE(), NgaySinh_NV) < 6570 THEN
+        SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = "Nhân viên phải từ đủ 18 tuổi trở lên!";
+    END IF;
+    INSERT INTO ConNguoi VALUE (CCCD_NV, Ten_NV, NgaySinh_NV, SoDT_NV, GioiTinh_NV, Email_NV, DiaChi_NV);
+    INSERT INTO NhanVien(CCCD, MgrCCCD, MaCN, MucLuong, QuanLiFlag, LeTanFlag, PhucVuFlag) 
+    VALUE (CCCD_NV, CCCD_Mgr, MaCN_NV, MucLuong_NV, QuanLiFlag_NV, LeTanFlag_NV, PhucVuFlag_NV);
 
+END//
 
-
-CREATE PROCEDURE insert_SDT(
-	Ma_KH_n INT,
-    So_dien_thoai_n VARCHAR(12)
+CREATE PROCEDURE updateEmployee(
+    CCCD_NV CHAR(12),
+    NgaySinh_NV DATE,
+    SoDT_NV CHAR(10),
+    Email_NV VARCHAR(255),
+    DiaChi_NV VARCHAR(1000),
+    MucLuong_NV INT
 )
 BEGIN
-	
-    IF Ma_KH_n IS NULL THEN 
-		SIGNAL SQLSTATE '45000' 
-            SET MESSAGE_TEXT = 'Mã khách hàng rỗng';
-	END IF;
-    
-    IF So_dien_thoai_n IS NULL THEN 
-		SIGNAL SQLSTATE '45000' 
-            SET MESSAGE_TEXT = 'Số điện thoại rỗng';
-	END IF;
-	
-	IF NOT EXISTS (SELECT Ma_KH FROM khach_hang WHERE Ma_KH = Ma_KH_n) THEN 
-		SIGNAL SQLSTATE '45000' 
-			SET MESSAGE_TEXT = 'Không tồn tại khách hàng theo mã khách hàng đã nhập';
+    IF CCCD_NV IS NULL THEN
+        SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = "CCCD không được bỏ trống!";
     END IF;
-    
-    IF LENGTH(So_dien_thoai_n) != 10 THEN 
-		SIGNAL SQLSTATE '45000' 
-			SET MESSAGE_TEXT = 'Số điện thoại đã nhập phải có 10 ký tự';
+    IF NgaySinh_NV IS NULL THEN
+        SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = "Ngày sinh không được bỏ trống!";
     END IF;
-    
-    IF So_dien_thoai_n NOT LIKE '0%' THEN 
-		SIGNAL SQLSTATE '45000' 
-			SET MESSAGE_TEXT = 'Số điện thoại đã nhập phải có số 0 nằm ở đầu tiên';
+    IF SoDT_NV IS NULL THEN
+        SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = "Số điện thoại không được bỏ trống!";
     END IF;
-    
-    INSERT INTO So_dien_thoai VALUE (Ma_KH_n, So_dien_thoai_n);
-END //
+    IF MucLuong_NV IS NULL THEN
+        SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = "Mức lương không được bỏ trống!";
+    END IF;
+    IF Email_NV NOT LIKE "%@gmail.com" THEN  
+		SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = 'Email không đúng định dạng @gmail.com';
+    END IF;
+    IF (SELECT LENGTH(CCCD_NV) <> 12) THEN
+        SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = "CCCD phải có đúng 12 chữ số!";
+    END IF;
+    IF (NOT EXISTS (SELECT * FROM NhanVien WHERE CCCD = CCCD_NV)) THEN
+        SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = "Số CCCD không tồn tại!";
+    END IF;
+    IF (SELECT LENGTH(SoDT_KH) <> 10 OR SoDT_NV NOT REGEXP "^0[0-9]{9}") THEN
+        SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = "Số điện thoại phải bắt đầu bằng 0 và có đúng 10 chữ số!";
+    END IF;
+    IF DATEDIFF(CURDATE(), NgaySinh_NV) < 6570 THEN
+        SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = "Nhân viên phải từ đủ 18 tuổi trở lên!";
+    END IF;
+    UPDATE NhanVien SET MucLuong = MucLuong_NV WHERE CCCD = CCCD_NV;
+    UPDATE ConNguoi SET NgaySinh = NgaySinh_NV, SoDienThoai = SoDT_NV, Email = Email_NV, DiaChi = DiaChi_NV
+    WHERE CCCD = CCCD_NV;
+END//
 
-
-CREATE PROCEDURE update_SDT(
-	SDT_input VARCHAR(12),
-    SDT_update VARCHAR(12)
+CREATE PROCEDURE deleteEmployee(
+    CCCD_NV CHAR(12)
 )
 BEGIN
-	IF SDT_input IS NULL THEN 
-		SIGNAL SQLSTATE '45000' 
-            SET MESSAGE_TEXT = 'Số điện thoại input rỗng';
-	END IF;
-    
-    IF SDT_update IS NULL THEN 
-		SIGNAL SQLSTATE '45000' 
-            SET MESSAGE_TEXT = 'Số điện thoại update rỗng';
-	END IF;
-    
-    IF NOT EXISTS (SELECT So_dien_thoai FROM So_dien_thoai WHERE So_dien_thoai = SDT_input) THEN 
-		SIGNAL SQLSTATE '45000' 
-			SET MESSAGE_TEXT = 'Số điện thoại input không tồn tại';
+    IF CCCD_NV IS NULL THEN
+        SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = "CCCD không được bỏ trống!";
     END IF;
-    
-     IF LENGTH(SDT_update) != 10 THEN 
-		SIGNAL SQLSTATE '45000' 
-			SET MESSAGE_TEXT = 'Số điện thoại update đã nhập phải có 10 ký tự';
+    IF (SELECT LENGTH(CCCD_NV) <> 12) THEN
+        SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = "CCCD phải có đúng 12 chữ số!";
     END IF;
-    
-    IF SDT_update NOT LIKE '0%' THEN 
-		SIGNAL SQLSTATE '45000' 
-			SET MESSAGE_TEXT = 'Số điện thoại update đã nhập phải có số 0 nằm ở đầu tiên';
+    IF (NOT EXISTS (SELECT * FROM NhanVien WHERE CCCD = CCCD_NV)) THEN
+        SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = "Số CCCD không tồn tại!";
     END IF;
-    
-    UPDATE So_dien_thoai
-    SET So_dien_thoai = SDT_update
-    WHERE So_dien_thoai = SDT_input;
-END //
+    DELETE FROM NhanVien WHERE CCCD = CCCD_NV;
+    DELETE FROM ConNguoi WHERE CCCD = CCCD_NV;
+END//
 
-
-CREATE PROCEDURE delete_SDT(
-	SDT_delete VARCHAR(12)
-)
-BEGIN
-	IF SDT_delete IS NULL THEN 
-		SIGNAL SQLSTATE '45000' 
-            SET MESSAGE_TEXT = 'Số điện thoại input rỗng';
-	END IF;
-    
-    IF NOT EXISTS (SELECT So_dien_thoai FROM So_dien_thoai WHERE So_dien_thoai = SDT_delete) THEN 
-		SIGNAL SQLSTATE '45000' 
-			SET MESSAGE_TEXT = 'Số điện thoại input không tồn tại';
-    END IF;
-    
-    DELETE FROM So_dien_thoai 
-    WHERE So_dien_thoai = SDT_delete;
-END //
 DELIMITER ;
