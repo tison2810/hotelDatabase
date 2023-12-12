@@ -60,9 +60,9 @@ const Order = () => {
                     return (
                         <tbody>
                             <tr>
-                                <td>{order.CCCD}</td>
-                                <td>{order.HoTen}</td>
-                                <td>{order.SoDienThoai}</td>
+                                <td>{order.MaSo}</td>
+                                <td>{order.MucGia}</td>
+                                <td>{order.SoLuong}</td>
                             </tr>
                         </tbody>
                     )
