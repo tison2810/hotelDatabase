@@ -35,12 +35,12 @@ const Aside = () => {
                     </div>
                 </div>
                 <div className={styles.sidebar}>
-                    <Link to="/">
+                    {/* <Link to="/">
                         <span>
                             <MdDashboard />
                         </span>
                         <h3>DashBoard</h3>
-                    </Link>
+                    </Link> */}
                     <Link to="/booking" className={styles.active}>
                         <span>
                             <FaTicketAlt />
@@ -77,12 +77,12 @@ const Aside = () => {
                         </span>
                         <h3>Apartment</h3>
                     </Link>
-                    <Link to='/account'>
+                    {/* <Link to='/account'>
                         <span>
                             <FaAddressCard />
                         </span>
                         <h3>Account</h3>
-                    </Link>
+                    </Link> */}
                     <Link to='/order'>
                         <span>
                         <GoListUnordered />
