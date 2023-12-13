@@ -12,7 +12,8 @@ exports.postBooking = (req, res, next) => {
     let sql = Booking.save();
     db.execute(sql, [username, MaSoLDP, MaCN, TenPhong, ThoiGianNhanP, ThoiGianTraP, CCCDLT], (err, result) => {
         if (err) {
-            res.send(err);
+            res.send(err)
+            // res.say('Failed, Try Again');
         }
         else {
             res.send('Success, Back to Your App');
