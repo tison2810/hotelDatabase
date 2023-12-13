@@ -11,7 +11,7 @@ module.exports = class Booking {
         this.CCCDLT = CCCDLT;
     }
     static save() {
-        const sql = 'SELECT * FROM ChiNhanh';
+        const sql = 'CALL insertLuotDatPhong(?, ?, ?, ?, ?, ?, ?)';
         return sql;
     }
 }

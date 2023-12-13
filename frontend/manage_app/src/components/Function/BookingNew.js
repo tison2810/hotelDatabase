@@ -39,19 +39,19 @@ function NewBooking({ onConfirm }) {
                     </div>
                     <div className={styles2.form_control}>
                         <label for="ThoiGianNhanP">Checkin:</label>
-                        <input type="datetime-local" name="ThoiGianNhanP" id="price" step="0.01" />
+                        <input type="date" name="ThoiGianNhanP" id="price" step="0.01" />
                     </div>
                     <div className={styles2.form_control}>
                         <label for="ThoiGianTraP">Checkout:</label>
-                        <input type="datetime-local" name ="ThoiGianTraP" id="price" step="0.01" />
+                        <input type="date" name ="ThoiGianTraP" id="price" step="0.01" />
                     </div>
                     <div className={styles2.form_control}>
                         <label for="CCCDLT">Reception ID:</label>
-                        <input type="number" name="CCCDLT" id="price" step="0.01" />
+                        <input type="text" name="CCCDLT" id="price" step="0.01" />
                     </div>
                     <div>
                         <button onClick={onConfirm} className={styles.exitbutton}>Exit</button>
-                        <button onClick={onConfirm} type = "submit" className={styles.button}>Confirm</button>
+                        <button type = "submit" className={styles.button}>Confirm</button>
                     </div>
                 </form>
             </div>
