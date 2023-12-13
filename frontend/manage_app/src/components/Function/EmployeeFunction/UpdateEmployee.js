@@ -3,7 +3,7 @@ import styles from "../../../css/InsertForm.module.css"
 
 const UpdateForm = () => {
     return (
-        <form className={styles.container} action="http://localhost:8080/customer/update" method="POST">
+        <form className={styles.container} action="http://localhost:8080/employee/update" method="POST">
             <div className={styles.form_control}>
                 <label for="CCCD">ID:</label>
                 <input type="text" name="CCCD" id="price" step="0.01" />

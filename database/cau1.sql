@@ -186,7 +186,7 @@ BEGIN
     IF (NOT EXISTS (SELECT * FROM NhanVien WHERE CCCD = CCCD_NV)) THEN
         SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = "Số CCCD không tồn tại!";
     END IF;
-    IF (SELECT LENGTH(SoDT_KH) <> 10 OR SoDT_NV NOT REGEXP "^0[0-9]{9}") THEN
+    IF (SELECT LENGTH(SoDT_NV) <> 10 OR SoDT_NV NOT REGEXP "^0[0-9]{9}") THEN
         SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = "Số điện thoại phải bắt đầu bằng 0 và có đúng 10 chữ số!";
     END IF;
     IF DATEDIFF(CURDATE(), NgaySinh_NV) < 6570 THEN
