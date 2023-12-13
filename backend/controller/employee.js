@@ -56,6 +56,7 @@ exports.updateEmployee = (req, res, next) => {
     db.execute(sql, [CCCD, NgaySinh, SoDienThoai, Email, Diachi, MucLuong], (err, result) => {
         if (err) {
             res.send(err);
+            console.log(err);
         }
         else {
             res.send('Success, Back to Your App');

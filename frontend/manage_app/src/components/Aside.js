@@ -101,7 +101,7 @@ const Aside = () => {
                 
             </aside>
             <Routes>
-                    <Route path="/" element={<DashBoard/>} />
+                    {/* <Route path="/" element={<DashBoard/>} /> */}
                     <Route path="/booking" element={<Booking/>} />
                     <Route path="/customer" element={<Customer/>} />
                     <Route path="/report" element={<Report/>} />

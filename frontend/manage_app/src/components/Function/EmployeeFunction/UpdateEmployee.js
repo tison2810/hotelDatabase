@@ -26,7 +26,7 @@ const UpdateForm = () => {
             </div>  
             <div className={styles.form_control}>
                 <label for="MucLuong">Salary:</label>
-                <input type="text" name="MucLuong" id="price" step="0.01" />
+                <input type="number" name="MucLuong" id="price" step="0.01" />
             </div> 
             <button className={styles.btn} type="submit"> Submit </button>
         </form>
